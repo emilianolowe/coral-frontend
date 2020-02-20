@@ -1,12 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Main from './components/MainComponent.js';
+import AboutUs from './components/AboutUs';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
+  const AboutUsRoute = () => {
+    return (
+      <AboutUs />
+    )
+  }
   return (
     <div className="App">
-      <Main />
+      <h1>Hello Coral hello!!!!</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/aboutus" component={AboutUsRoute}></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
