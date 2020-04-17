@@ -7,36 +7,19 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
 
-  const HomePageRoute = () => {
-    return (
-      <HomePage />
-    )
-  }
-
-  const AboutUsRoute = () => {
-    return (
-      <AboutUs />
-    )
-  }
-
-  const PropertyGalleryRoute = () => {
-    return (
-      <PropertyGallery />
-    )
-  }
-
   return (
     <div className="App">
       <h1>Hello Coral hello!!!!</h1>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/home" component={HomePageRoute}></Route>
-          <Route exact path="/aboutus" component={AboutUsRoute}></Route>
-          <Route exact path="/gallery" component={PropertyGalleryRoute}></Route>
+          <Route exact path="/home" component={HomePage}></Route>
+          <Route exact path="/aboutus" component={AboutUs}></Route>
+          <Route exact path="/gallery" component={PropertyGallery}></Route>
         </Switch>
       </BrowserRouter>
     </div>
   );
+  
 }
 
 export default App;
