@@ -5,8 +5,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className = "container">
-        <Hero/>
-        
+        <Hero heroHeader= "Renting Reinvented"/>
+
       </div>
     );
   }
