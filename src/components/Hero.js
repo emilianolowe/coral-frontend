@@ -6,8 +6,8 @@ class Hero extends Component {
         return (
             <div>
                 <h1>{this.props.heroHeader}</h1>
-                <img src = "img/apartmentblueaccent.jpeg" alt = "apartment with blue accent"/>
-                <p>We are the leader in online home rentals.</p>
+                <img src = "img/IMG_7193.jpeg" alt = "Barcelona building facade"/>
+                <p>No realtor fees. Legal deposit only, nothing more.</p>
             </div>
         );
     }
