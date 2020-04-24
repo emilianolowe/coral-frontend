@@ -5,8 +5,10 @@ class HomePage extends Component {
   render() {
     return (
       <div className = "container">
-        <Hero heroHeader= "Renting Reinvented"/>
-
+        <Hero heroHeader = "Rent your dream home!"
+        subHeader = "No realtor fees. Legal deposit only, nothing more."
+        imgSrc = "img/IMG_7193.jpeg"
+        imgAlt = "Barcelona building facade"/>
       </div>
     );
   }
