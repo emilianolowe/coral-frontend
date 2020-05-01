@@ -8,8 +8,8 @@ class WhyCoralCard extends Component {
         <div className="row">
           <div className="col-md-4">
             <Card imgsrc="img/rental-app.jpg"
-              title="Search, See and Sign"
-              bodyText="100% online, no bureaucracy. Find a place to love with security, without extra deposits, no realtor fees and no hassle."
+              title="Find a place to love."
+              bodyText="No realtor fees, no extra deposits, and no hassle."
               btnText="Search Now" />
           </div>
           <div className="col-md-4">
@@ -21,7 +21,7 @@ class WhyCoralCard extends Component {
           <div className="col-md-4">
             <Card imgsrc="img/plumber-edited.jpg"
               title="Network Providers"
-              bodyText="Hire trusted professional from our network of vetted service providers for repairs, maintenance, and other services."
+              bodyText="Hire trusted professionals from our network of vetted service providers for repairs, maintenance, and other services."
               btnText="See our List" />
           </div>
         </div>
