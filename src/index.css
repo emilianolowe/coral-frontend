@@ -12,20 +12,30 @@ code {
     monospace;
 }
 
-.hero-strip {
-  position: relative;
-  top: 50%;
-  left: 10%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
+.hero {
+  /* Sizing */
+  width: 100vw;
+  height: 100vh;
+  /* Flexbox stuff */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Text styles */
+  text-align: center;
+  color: white;
+  /* Background styles */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), 
+  url("/img/IMG_7193.jpeg");
 }
 
-.hero-header {
-	text-align: left;
-    color: red;
-}
-
-.hero-subheader {
-	text-align: left;
-    color: red;
+.hero h1 {
+  /* Text styles */
+  font-size: 5em;
+  /* Margins */
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
