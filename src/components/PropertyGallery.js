@@ -3,6 +3,31 @@ import StackGrid from "react-stack-grid";
 import Card from "./PropertyCard";
 
 class PropertyGallery extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      properties: []
+    }
+  }
+
+  componentWillMount() {
+    fetch("http://localhost:3000/v1/properties", {
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+        this.setState({
+          properties: response
+        })
+      })
+  }
+
   render() {
     return (
       <StackGrid columnWidth={350}>
