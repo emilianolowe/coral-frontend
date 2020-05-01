@@ -7,7 +7,7 @@ class OwnersLanding extends Component {
     return (
       <div>
         <Hero heroHeader="Peace of mind."
-          subHeader="Guaranteed rent for property owners. People, relationships, and trust come first."
+          subHeader="Guaranteed rent for property owners. People, relationships, and trust first."
           imgSrc="img/IMG_0412.jpeg"
           imgAlt="Barcelona street view" />
         <WhyCoralCard />

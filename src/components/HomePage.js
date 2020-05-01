@@ -8,8 +8,8 @@ class HomePage extends Component {
       <div>
 
         <Hero heroHeader="Rent your dream home!"
-          subHeader="No realtor fees. Legal deposit only, nothing more."
-          imgSrc="/img/IMG_7193.jpeg"
+          subHeader="No realtor fees. No extra deposits. No hassle."
+          imgSrc="/img/hero-home.jpg"
           imgAlt="Barcelona building facade" />
 
         <WhyCoralCard />
