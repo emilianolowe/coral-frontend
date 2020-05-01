@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import HomePage from './components/HomePage';
 import AboutUs from './components/AboutUs';
 import NavBar from './components/NavBar';
@@ -7,9 +6,8 @@ import PropertyGallery from './components/PropertyGallery';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
-
   return (
-    <div className="App">
+    <div>
       <NavBar />
       <BrowserRouter>
         <Switch>
