@@ -6,11 +6,10 @@ class OwnersLanding extends Component {
   render() {
     return (
       <div>
-        <Hero heroHeader="Hello Landlord!"
-          subHeader="Rent with us."
+        <Hero heroHeader="Peace of mind."
+          subHeader="Guaranteed rent for property owners. People, relationships, and trust come first."
           imgSrc="img/IMG_0412.jpeg"
-          imgAlt="Barcelona building facade" />
-
+          imgAlt="Barcelona street view" />
         <WhyCoralCard />
       </div>
     );
