@@ -12,13 +12,7 @@ class PropertyGallery extends Component {
   }
 
   componentWillMount() {
-    fetch("http://localhost:3000/v1/properties", {
-      method: 'GET',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-      }
-    })
+    fetch("http://localhost:3000/v1/properties")
       .then(response => response.json())
       .then(response => {
         console.log(response)
