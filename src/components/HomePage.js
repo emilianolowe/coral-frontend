@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Hero from "./Hero";
-import WhyCoralCard from "./WhyCoralCard";
+import HomepageCard from "./HomepageCard";
 
 class HomePage extends Component {
   render() {
@@ -12,7 +12,7 @@ class HomePage extends Component {
           imgSrc="/img/hero-home.jpg"
           imgAlt="Barcelona building facade" />
 
-        <WhyCoralCard />
+        <HomepageCard />
       </div>
     );
   }

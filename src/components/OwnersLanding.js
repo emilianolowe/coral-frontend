@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Hero from "./Hero";
-import WhyCoralCard from "./WhyCoralCard";
+import OwnerCard from "./OwnerCard";
 
 class OwnersLanding extends Component {
   render() {
@@ -10,7 +10,7 @@ class OwnersLanding extends Component {
           subHeader="Guaranteed rent for property owners. People, relationships, and trust first."
           imgSrc="img/IMG_0412.jpeg"
           imgAlt="Barcelona street view" />
-        <WhyCoralCard />
+        <OwnerCard />
       </div>
     );
   }

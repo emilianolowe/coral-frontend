@@ -12,7 +12,7 @@ class AboutUs extends Component {
                 
                 <div className = 'member'>
                     <div className = 'photo'>
-                    <img src="/img/lourenco.jpg" alt="lourenco picture" className="img" />
+                    <img src="/img/lourenco.jpg" alt="lourenco" className="img" />
                     </div>
                     <div className = 'tagline'>LouName</div>
                     <div className = 'position'>LouPos</div>
@@ -20,7 +20,9 @@ class AboutUs extends Component {
                 </div>
 
                 <div className = 'member'>
-                    <div className = 'photo'>KanyaPhoto</div>
+                    <div className = 'photo'>
+                    <img src="/img/kanyasquare.jpg" alt="kanya" className="img" />
+                    </div>
                     <div className = 'tagline'>KanyaName</div>
                     <div className = 'position'>KanyaPos</div>
                     <div className = 'bio'>Kanyabio</div>
@@ -28,7 +30,7 @@ class AboutUs extends Component {
 
                 <div className = 'member'>
                     <div className = 'photo'>
-                        <img src="/img/nadinepic.jpg" alt="nadine picture" className="img" />
+                        <img src="/img/nano.jpg" alt="nano" className="img" />
                     </div>
                     <div className = 'tagline'>NanoName</div>
                     <div className = 'position'>NanoPos</div>
@@ -37,7 +39,7 @@ class AboutUs extends Component {
 
                 <div className = 'member'>
                     <div className = 'photo'>
-                        <img src="/img/nadinepic.jpg" alt="nadine picture" className="img" />
+                        <img src="/img/nadinepic.jpg" alt="nadine" className="img" />
                     </div>
                     <div className = 'tagline'>NadineName</div>
                     <div className = 'position'>NadinePos</div>

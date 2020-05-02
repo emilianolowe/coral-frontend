@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Card from './BaseCard';
 
-class WhyCoralCard extends Component {
+class HomepageCard extends Component {
   render() {
     return (
       <div className="container-fluid d-flex justify-content-center">
         <div className="row-fluid justify-content-center">
           <div className="col-md-8 offset-md-2">
-            <Card imgsrc="img/find-a-place-to-love.jpeg"
+          <Card imgsrc="img/find-a-place-to-love.jpeg"
               title="Find a place to love."
-              bodyText="No realtor fees, no extra deposits, and no hassle."
+              bodyText="A reimagined way to discover, rent, and furnish your next home."
               btnText="Search Now" />
           </div>
           <div className="col-md-8 offset-md-2">
@@ -21,7 +21,7 @@ class WhyCoralCard extends Component {
           <div className="col-md-8 offset-md-2">
             <Card imgsrc="img/service-providers.jpeg"
               title="Service Providers"
-              bodyText="Find vetted service providers like handymen, plumbers, and housekeepers."
+              bodyText="Contract vetted service providers like handymen, plumbers, and housekeepers."
               btnText="Find Help" />
           </div>
         </div>
@@ -30,4 +30,4 @@ class WhyCoralCard extends Component {
   }
 }
 
-export default WhyCoralCard;
+export default HomepageCard;
