@@ -37,5 +37,11 @@ code {
   /* Margins */
   margin-top: 0;
   margin-bottom: 0.2em;
-  
+}
+.hero h2 {
+  /* Margins */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0.4em;
+  margin-left: 0.4em;
 }

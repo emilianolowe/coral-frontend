@@ -1,3 +1,21 @@
+# Clean Code Assignment
+
+## Kanya
+
+```JavaScript
+
+```
+
+
+## Emiliano
+
+## Lourenço
+
+## Nadine
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

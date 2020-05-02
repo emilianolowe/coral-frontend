@@ -8,8 +8,8 @@ class OwnerCard extends Component {
         <div className="row-fluid justify-content-center">
           <div className="col-md-8 offset-md-2">
             <Card imgsrc="img/owner-card-property.jpg"
-              title="Do you want guaranteed rent?"
-              bodyText="How much extra money can you earn renting your property?"
+              title="Peace of mind."
+              bodyText="We make renting your home safe and easy."
               btnText="List A Property" />
           </div>
           <div className="col-md-8 offset-md-2">

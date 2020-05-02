@@ -2,8 +2,8 @@ import React from 'react';
 
 const Card = props => {
   return (
-    <div>
-      <div className="card text-center border-0 mt-4 p-4">
+    <div mt-5>
+      <div className="card text-center border-0 m-3 p-3">
         <div className="overflow-auto">
           <img src={props.imgsrc} alt="image-1" className="card-img-top" />
         </div>
