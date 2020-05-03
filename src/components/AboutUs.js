@@ -8,6 +8,9 @@ class AboutUs extends Component {
         return (
             <div class="container-fluid">
                 <div className="row-fluid justify-content-center">
+                    <div class="col-md-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 0 24 24" width="50"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                    </div>
                     <div class="col-md-8 m-2 p-2">
                         <h2>About Us</h2>
                         <p>Coral is a start to finish online real estate agency.</p>
