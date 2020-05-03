@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 # Clean Code Assignment
 
-## The Coral Frint End coded by jointly Lourenço, Emiliano, Kanya, and Nadine
+## The Coral Web App developed by Lourenço, Emiliano, Kanya, and Nadine
 
 ## Single Responsibility Principle: The React component-based architecture was designed specifically to serve a single business logic for each component. We have used class components in React in order to use them across our application as needed. Each class component serves a single purpose and can be used again and again. Take a look at the `NavBar.js` file as an example of how we are implementing this principle in our code. 
 

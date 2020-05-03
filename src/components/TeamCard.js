@@ -7,24 +7,24 @@ class TeamCard extends Component {
       <div className="container-fluid d-flex justify-content-left">
         <div className="row">
           <div className="col-md-3">
-          <Card imgsrc="img/kanyasquare.jpg"
+          <Card imgsrc="img/nadinesquare.jpg"
               title="Nadine Cumberbatch"
-              bodyText="Bio"/>
+              bodyText="Product Manager"/>
           </div>
           <div className="col-md-3">
             <Card imgsrc="img/lourencosquare.jpg"
               title="Lourenço Trevenzoli"
-              bodyText="Bio"/>
+              bodyText="Full Stack Developer"/>
           </div>
           <div className="col-md-3">
             <Card imgsrc="img/emilianosquare.jpg"
               title="Emiliano Lowe"
-              bodyText="Bio"/>
+              bodyText="Full Stack Developer"/>
           </div>
           <div className="col-md-3">
             <Card imgsrc="img/kanyasquare.jpg"
               title="Kanya Lyons"
-              bodyText="Bio"/>
+              bodyText="Front End Developer, Product Designer, and UX Writer"/>
           </div>
         </div>
       </div>
