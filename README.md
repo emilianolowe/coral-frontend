@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 # Clean Code Assignment
 
-The Coral Web App developed by Lourenço, Emiliano, Kanya, and Nadine
+The Coral Web App developed by Lourenço, Emiliano, Kanya, and Nadine.
 
 ## Single Responsibility Principle: 
 

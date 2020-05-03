@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Hero from "./Hero";
-import OwnerCard from "./OwnerCard";
+import PeaceOfMindCard from "./PeaceOfMindCard";
+import VirtuallySignCard from "./VirtuallySignCard";
+import ServiceProvidersCard from "./ServiceProvidersCard";
 
 class OwnersLanding extends Component {
   render() {
@@ -11,7 +13,9 @@ class OwnersLanding extends Component {
           imgSrc="img/rent-gaurantee.jpeg"
           imgAlt="Barcelona street view" />
         <div class="row mt-5"></div>
-        <OwnerCard />
+        <PeaceOfMindCard />
+        <ServiceProvidersCard />
+        <VirtuallySignCard />
       </div>
     );
   }
