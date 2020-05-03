@@ -1,8 +1,16 @@
 import React, { Component } from "react";
-import StackGrid from "react-stack-grid";
-import Card from "./PropertyCard";
+import Masonry from 'react-masonry-component';
+import Card from './PropertyCard';
 
-class PropertyGallery extends Component {
+const masonryOptions = {
+  transitionDuration: 0
+};
+
+const style = {
+  backgroundColor: 'tomato'
+};
+
+class Gallery extends Component {
 
   constructor(props) {
     super(props)
@@ -22,30 +30,21 @@ class PropertyGallery extends Component {
       })
   }
 
+  handleClick() { }
+
   render() {
     return (
-      <StackGrid columnWidth={350}>
-        <div key="key1" itemComponent="span">
-          <Card imgsrc="img/DocuSign740.png" />
-        </div>
-        <div key="key2">
-          <Card imgsrc="img/DocuSign740.png" />
-        </div>
-        <div key="key3">
-          <Card imgsrc="img/DocuSign740.png" />
-        </div>
-        <div key="key4" itemComponent="span">
-          <Card imgsrc="img/DocuSign740.png" />
-        </div>
-        <div key="key5">
-          <Card imgsrc="img/DocuSign740.png" />
-        </div>
-        <div key="key6">
-          <Card imgsrc="img/DocuSign740.png" />
-        </div>
-      </StackGrid>
+      <Masonry
+        className={'my-gallery-class'}
+        style={style}
+        onClick={this.handleClick}
+      >
+        console.log(this.state)
+        {this.props.state}
+        {<Card imgsrc='/img/find-a-place-to-love.jpeg' />}
+      </Masonry>
     );
   }
 }
 
-export default PropertyGallery;
+export default Gallery;
