@@ -77,11 +77,11 @@ The React component-based architecture was designed specifically to serve a sing
 
 ## Open/Closed Principle: 
 
-This is exactly what we're doing in our web app. We are creating components that we can extend for use in a variety of ways. We're importing our `BaseCard` into the `HomePageCard` and modifying it with unique properties needed for the home page. We are not changing the `BaseCard` itself, just its implementation.
+This is exactly what we're doing in our web app. We are creating components that we can extend for use in a variety of ways. We're importing our `ButtonCard` into the `HomePageCard` and modifying it with unique properties needed for the home page. We are not changing the `ButtonCard` itself, just its implementation.
 
 ## Liskov’s Substitution Principle: 
 
-You can see Liskov’s Substitution Principle at play in the Coral Front End. It is possible to use any class that is the child of a parent class in place of its parent without any unexpected behavior. For example, we can use the `HomepageCard` in place of its parent the `BaseCard` with no problems whatsoever. However, you cannot use the parent in place of the child, in other words, you cannot use the `BaseCard` in place of the `HomepageCard.`
+You can see Liskov’s Substitution Principle at play in the Coral Front End. It is possible to use any class that is the child of a parent class in place of its parent without any unexpected behavior. For example, we can use the `HomepageCard` in place of its parent the `ButtonCard` with no problems whatsoever. However, you cannot use the parent in place of the child, in other words, you cannot use the `ButtonCard` in place of the `HomepageCard.`
 
 ## Interface Segregation Principle: 
 

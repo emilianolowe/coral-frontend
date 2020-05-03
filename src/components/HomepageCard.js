@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './BaseCard';
+import Card from './ButtonCard';
 
 class HomepageCard extends Component {
   render() {
