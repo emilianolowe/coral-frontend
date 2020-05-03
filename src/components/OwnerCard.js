@@ -7,8 +7,8 @@ class OwnerCard extends Component {
       <div className="container-fluid d-flex justify-content-center">
         <div className="row-fluid justify-content-center">
           <div className="col-md-8 offset-md-2">
-            <Card imgsrc="img/owner-card-property.jpg"
-              title="Peace of mind."
+            <Card imgsrc="img/peace-of-mind.jpg"
+              title="Peace of Mind"
               bodyText="We make renting your home safe and easy."
               btnText="List A Property" />
           </div>
@@ -21,7 +21,7 @@ class OwnerCard extends Component {
           <div className="col-md-8 offset-md-2">
             <Card imgsrc="img/service-providers.jpeg"
               title="Service Providers"
-              bodyText="Contract vetted service providers like handymen, plumbers, and housekeepers."
+              bodyText="Tap into our vetted network of handymen, plumbers, housekeepers, and other professionals."
               btnText="Find Help" />
           </div>
         </div>
