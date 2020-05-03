@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TeamCard from './TeamCard';
 
 class AboutUs extends Component {
 
@@ -25,12 +26,7 @@ class AboutUs extends Component {
                         <h2>Our Team</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-2">Nadine Cumberbatch</div>
-                    <div class="col-md-2">Lourenço Trevenzoli</div>
-                    <div class="col-md-2">Emiliano Lowe</div>
-                    <div class="col-md-2">Kanya Lyons</div>
-                </div>
+                <TeamCard/>
             </div>
         );
 
