@@ -9,7 +9,7 @@ const NoButtonCard = props => {
         </div>
         <div className="card-body text-dark">
           <h4 className="card-title">{props.title}</h4>
-          <p className="card-text text-secondary">{props.bodyText}</p>
+          <h5 className="card-text text-secondary">{props.bodyText}</h5>
         </div>
       </div>
     </div>

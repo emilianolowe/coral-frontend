@@ -8,21 +8,21 @@ class AboutUs extends Component {
         return (
             <div class="container-fluid">
                 <div className="row-fluid justify-content-center">
-                    <div class="col-md-8 m-2 p-2">
+                    <div class="col-md-10 m-2 p-2">
                         <h2>About Us</h2>
-                        <p>Coral is a start to finish online real estate agency.</p>
+                        <h5>Coral is a start to finish online real estate agency.</h5>
                     </div>
                 </div>
                 <div className="row-fluid justify-content-center">
-                    <div class="col-md-8 m-2 p-2">
+                    <div class="col-md-10 m-2 p-2">
                         <h2>Our Mission and Values</h2>
-                        <p>Coral nurtures lasting, quality relationships between home renters and owners. We are transparent, inclusive, and 100% digital.</p>
+                        <h5>Coral nurtures lasting, quality relationships between home renters and owners. We are transparent, inclusive, and 100% digital.</h5>
                     </div>
                     <div class="col-sm-4">
                     </div>
                 </div>
                 <div className="row-fluid justify-content-center">
-                    <div class="col-md-8 m-2 p-2">
+                    <div class="col-md-10 m-2 p-2">
                         <h2>Our Team</h2>
                     </div>
                 </div>
