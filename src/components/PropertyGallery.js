@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+fsimport React, { Component } from "react";
 import Masonry from 'react-masonry-component';
 import Card from './PropertyCard';
 
@@ -17,10 +17,15 @@ class Gallery extends Component {
     this.state = {
       properties: []
     }
+
+    this.fetchData = this.fetchData.bind(this);
+
+    this.fetchData();
+
   }
 
   // refactor to try/catch async from promise/callback?
-  componentWillMount() {
+  fetchData() {
     fetch("http://localhost:3000/v1/properties")
       .then(response => response.json())
       .then(response => {
@@ -35,13 +40,9 @@ class Gallery extends Component {
 
   render() {
     return (
-      <Masonry
-        className={'my-gallery-class'}
-        style={style}
-        onClick={this.handleClick}
-      >
-        {this.props.state}
-      </Masonry>
+      <div>
+        {this.state.properties.length}
+      </div>
     );
   }
 }
