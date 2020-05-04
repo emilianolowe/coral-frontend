@@ -19,6 +19,7 @@ class Gallery extends Component {
     }
   }
 
+  // refactor to try/catch async from promise/callback?
   componentWillMount() {
     fetch("http://localhost:3000/v1/properties")
       .then(response => response.json())
@@ -39,9 +40,7 @@ class Gallery extends Component {
         style={style}
         onClick={this.handleClick}
       >
-        console.log(this.state)
         {this.props.state}
-        {<Card imgsrc='/img/find-a-place-to-love.jpeg' />}
       </Masonry>
     );
   }
