@@ -1,14 +1,4 @@
-fsimport React, { Component } from "react";
-import Masonry from 'react-masonry-component';
-import Card from './PropertyCard';
-
-const masonryOptions = {
-  transitionDuration: 0
-};
-
-const style = {
-  backgroundColor: 'tomato'
-};
+import React, { Component } from "react";
 
 class Gallery extends Component {
 
@@ -29,7 +19,7 @@ class Gallery extends Component {
     fetch("http://localhost:3000/v1/properties")
       .then(response => response.json())
       .then(response => {
-        console.log(response)
+        console.log("fetching response", response)
         this.setState({
           properties: response
         })
@@ -39,9 +29,18 @@ class Gallery extends Component {
   handleClick() { }
 
   render() {
+    // Nano: this constant will receive the resulting JSX to show whatever you want
+    const theJSXResult = this.state.properties.map( property => (
+      <div>
+        <div>Hey!! I'm a property!!!</div>
+        <div>This is the Description: {property.description}</div>
+        <div>This is my image: <img src={property.imageURLs[0]} alt="property"/></div>
+        <br/><br/>
+      </div>
+    ))
     return (
       <div>
-        {this.state.properties.length}
+        {theJSXResult}
       </div>
     );
   }
