@@ -17,10 +17,12 @@ class Gallery extends Component {
     this.state = {
       properties: []
     }
+    this.fetchData = this.fetchData.bind(this);
+    this.fetchData();
   }
 
   // refactor to try/catch async from promise/callback?
-  componentWillMount() {
+  fetchData() {
     fetch("http://localhost:3000/v1/properties")
       .then(response => response.json())
       .then(response => {
@@ -34,14 +36,13 @@ class Gallery extends Component {
   handleClick() { }
 
   render() {
+    console.log(this.state.properties);
+    console.log(this.state.properties[0]);
+    console.log(this.state.properties[0].imageURLs[0]);
     return (
-      <Masonry
-        className={'my-gallery-class'}
-        style={style}
-        onClick={this.handleClick}
-      >
-        {this.props.state}
-      </Masonry>
+      <div>
+        <Card imgsrc={this.state.properties.length}></Card>
+      </div>
     );
   }
 }
