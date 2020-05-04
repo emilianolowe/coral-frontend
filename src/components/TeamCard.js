@@ -19,7 +19,7 @@ class TeamCard extends Component {
           <div className="col-md-3">
             <Card imgsrc="img/nano.png"
               title="Emiliano Lowe"
-              bodyText="Full Stack Developer"/>
+              bodyText="Full Stack Developer and Professional Badass"/>
           </div>
           <div className="col-md-3">
             <Card imgsrc="img/kanya.png"
