@@ -1,21 +1,3 @@
-# Clean Code Assignment
-
-## Kanya
-
-```JavaScript
-
-```
--Explanation
-
-## Emiliano
-
-## Lourenço
-
-## Nadine
-
-
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -84,3 +66,27 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Clean Code Assignment
+
+The Coral Web App developed by Lourenço, Emiliano, Kanya, and Nadine.
+
+## Single Responsibility Principle: 
+
+The React component-based architecture was designed specifically to serve a single business logic for each component. We have used class components in React in order to use them across our application as needed. Each class component serves a single purpose and can be used again and again. Take a look at the `NavBar.js` file as an example of how we are implementing this principle in our code. 
+
+## Open/Closed Principle: 
+
+This is exactly what we're doing in our web app. We are creating components that we can extend for use in a variety of ways. We're importing our `ButtonCard` into the `ServiceProvidersCard` and modifying it with unique properties needed for the home page and ownver page. We are not changing the `ButtonCard` itself, just its implementation.
+
+## Liskov’s Substitution Principle: 
+
+You can see Liskov’s Substitution Principle at play in the Coral Front End. It is possible to use any class that is the child of a parent class in place of its parent without any unexpected behavior. For example, we can use the `ServiceProvidersCard` in place of its parent the `ButtonCard` with no problems whatsoever. However, you cannot use the parent in place of the child, in other words, you cannot use the `ButtonCard` in place of the `ServiceProvidersCard.`
+
+## Interface Segregation Principle: 
+
+In our code, we do not force any client to implement an interface that is irrelevant to them. We split interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
+
+## Dependency Inversion Principle: 
+
+If you look at our code carefully, you will see that high-level component classes do not depend on low-level component classes, instead they depend upon the abstractions such as the React components. Each of our functions does one thing and one thing only. Each function is written in terms of a single level of abstraction. Our dependencies are decoupled.

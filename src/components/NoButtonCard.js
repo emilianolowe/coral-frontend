@@ -8,7 +8,7 @@ const NoButtonCard = props => {
           <img src={props.imgsrc} alt="image-1" className="card-img-top" />
         </div>
         <div className="card-body text-dark">
-          <h4 className="card-title">{props.title}</h4>
+          <h5 className="card-title">{props.title}</h5>
           <p className="card-text text-secondary">{props.bodyText}</p>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Hero from "./Hero";
-import HomepageCard from "./HomepageCard";
+import FindAPlaceToLoveCard from "./FindAPlaceToLoveCard";
+import VirtuallySignCard from "./VirtuallySignCard";
+import ServiceProvidersCard from "./ServiceProvidersCard";
 
 class HomePage extends Component {
   render() {
@@ -12,7 +14,9 @@ class HomePage extends Component {
           imgAlt="Barcelona building facade"
           mb-5 pb-5 />
         <div class="row mt-5"></div>
-        <HomepageCard />
+        <FindAPlaceToLoveCard />
+        <VirtuallySignCard />
+        <ServiceProvidersCard />
       </div>
     );
   }
