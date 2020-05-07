@@ -45,3 +45,7 @@ code {
   margin-right: 0.4em;
   margin-left: 0.4em;
 }
+.card-title {
+  /* Text styles */
+  color: #ff7262;
+}
