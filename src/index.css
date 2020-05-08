@@ -28,7 +28,6 @@ code {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  
 }
 
 .hero h1 {
@@ -89,4 +88,92 @@ code {
 .pint-contact {
   right: 70px;
   bottom: 10px; 
+}
+
+.footer {
+  background-color: #f8f9fa;
+}
+
+/* footer unvisited link */
+.footer a:link {
+  color: #6cb1b9;
+}
+
+/* footer visited link */
+.footer a:visited {
+  color:  #6cb1b99f;
+  ;
+}
+
+.btn.btn-social-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.btn.btn-rounded {
+  border-radius: 50px;
+}
+
+.btn-outline-facebook {
+  border: 1px solid #3b579d;
+  color: #3b579d;
+}
+
+.btn-outline-facebook:hover {
+  background: #3b579d;
+  color: #ffffff;
+}
+
+.btn-outline-twitter {
+  border: 1px solid #2caae1;
+  color: #2caae1;
+}
+
+.btn-outline-instagram {
+  border: 1px solid #dc4a38;
+  color: #dc4a38;
+}
+
+.btn-outline-twitter:hover {
+  background: #2caae1;
+  color: #ffffff
+}
+
+.btn-outline-instagram:hover {
+  background: #e52d27;
+  color: #ffffff;
+}
+
+.btn-facebook {
+  background: #3b579d;
+  color: #ffffff;
+}
+
+.btn-twitter {
+  background: #2caae1;
+  color: #ffffff;
+}
+
+.btn-instagram {
+  background: #dc4a38;
+  color: #ffffff;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+  background: #2d4278;
+  color: #ffffff;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus {
+  background: #1b8dbf;
+  color: #ffffff;
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+  background: #bf3322;
+  color: #ffffff;
 }
