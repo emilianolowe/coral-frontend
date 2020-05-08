@@ -49,3 +49,44 @@ code {
   /* Text styles */
   color: #ff7262;
 }
+
+.pint-card {
+  height: 300px;
+  width: 500px;
+  position: relative;
+  margin: 10px;
+}
+
+.pint-card-img {
+  border-radius: 25px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pint-overlay {
+  background-color: rgba(255,255,255, 0.8);
+  border-radius: 35px;
+  padding: 10px;
+  position: absolute;
+}
+
+.pint-price {
+  left: 10px;
+  bottom: 10px; 
+}
+
+.pint-street {
+  left: 10px;
+  top: 10px; 
+}
+
+.pint-favorite {
+  right: 10px;
+  bottom: 10px; 
+}
+
+.pint-contact {
+  right: 70px;
+  bottom: 10px; 
+}

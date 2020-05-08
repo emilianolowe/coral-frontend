@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Card from "./PropertyCard";
 
 class Gallery extends Component {
 
@@ -23,24 +24,30 @@ class Gallery extends Component {
         this.setState({
           properties: response
         })
-      })
+      }) // amazing
   }
 
   handleClick() { }
 
   render() {
     // Nano: this constant will receive the resulting JSX to show whatever you want
-    const theJSXResult = this.state.properties.map( property => (
+    // Combine JSXResult object with Card object 
+    const theJSXResult = this.state.properties.map(property => (
       <div>
-        <div>Hey!! I'm a property!!!</div>
-        <div>This is the Description: {property.description}</div>
-        <div>This is my image: <img src={property.imageURLs[0]} alt="property"/></div>
-        <br/><br/>
+        <Card property={property} />
       </div>
+      // <div>
+      //   <div>Hey!! I'm a property!!!</div>
+      //   <div>This is the Description: {property.description}</div>
+      //   <div>This is my image: <img src={property.imageURLs[0]} alt="property" /></div>
+      //   <br /><br />
+      // </div>
     ))
     return (
-      <div>
-        {theJSXResult}
+      <div className="container">
+        <div className="card-deck">
+          {theJSXResult}
+        </div>
       </div>
     );
   }
