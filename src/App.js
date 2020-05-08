@@ -7,6 +7,7 @@ import PropertyDetailsPage from './components/PropertyDetailsPage';
 import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Footer from "./components/Footer";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/gallery" component={PropertyGallery}></Route>
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
+          <Route exact path="/login" component={Login}></Route>
         </Switch>
       </BrowserRouter>
       <Footer />
