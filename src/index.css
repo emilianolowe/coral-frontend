@@ -146,34 +146,34 @@ code {
 }
 
 .btn-facebook {
-  background: #3b579d;
+  background-color: #3b579d !important;
   color: #ffffff;
 }
 
 .btn-twitter {
-  background: #2caae1;
+  background: #2caae1 !important;
   color: #ffffff;
 }
 
 .btn-instagram {
-  background: #dc4a38;
+  background: #dc4a38 !important;
   color: #ffffff;
 }
 
 .btn-facebook:hover,
 .btn-facebook:focus {
-  background: #2d4278;
+  background: #2d4278 !important;
   color: #ffffff;
 }
 
 .btn-twitter:hover,
 .btn-twitter:focus {
-  background: #1b8dbf;
+  background: #1b8dbf !important;
   color: #ffffff;
 }
 
 .btn-instagram:hover,
 .btn-instagram:focus {
-  background: #bf3322;
+  background: #bf3322 !important;
   color: #ffffff;
 }

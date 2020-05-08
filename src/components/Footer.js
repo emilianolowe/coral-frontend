@@ -5,14 +5,12 @@ class Footer extends Component {
         return (
             <footer>
                 <div className="container-fluid footer">
-                    <div className="container ml-5 mr-5">
+                    <div className="container">
                         <div className="row">
-                            <div className="col-md-4 text-center text-md-left">
-                                <div className="py-0">
-                                    <h3 className="my-4">Coral</h3>
-                                </div>
+                            <div className="py-4 col-md-4 d-flex justify-content-center">
+                                <img className="logo" src="/img/corl.svg" height="100" width="93" alt="Coral logo" ></img>
                             </div>
-                            <div className="col-md-4 text-center text-md-left ">
+                            <div className="col-md-4 text-center text-md-left">
                                 <div className="py-2 my-4">
                                     <div>
                                         <p> <i className="fa fa-map-marker mx-2 "></i>  c/ Almogávers, 119 08018 Barcelona
@@ -29,11 +27,11 @@ class Footer extends Component {
                                 <p>Coral is a reimagined way to discover, tour, and rent a home. We specialize in long-term rentals.</p>
                                 <div className="py-2">
                                     <a className="mr-3" href="#">
-                                        <button type="button" className="btn btn-social-icon btn-facebook btn-rounded">
+                                        <button type="button" className="btn-facebook btn btn-social-icon btn-rounded">
                                             <i className="fa fa-facebook"></i>
                                         </button>
                                     </a>
-                                    <a  className="mr-3" href="#">
+                                    <a className="mr-3" href="#">
                                         <button type="button" className="btn btn-social-icon btn-twitter btn-rounded">
                                             <i className="fa fa-twitter"></i>
                                         </button>
@@ -47,7 +45,7 @@ class Footer extends Component {
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </footer>
         );
     }
