@@ -6,6 +6,7 @@ import PropertyGallery from './components/PropertyGallery';
 import PropertyDetailsPage from './components/PropertyDetailsPage';
 import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,10 +21,9 @@ function App() {
           <Route exact path="/owner" component={OwnersLanding}></Route>
         </Switch>
       </BrowserRouter>
-      FOOTER
+      <Footer />
     </div>
   );
-
 }
 
 export default App;
