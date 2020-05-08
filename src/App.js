@@ -8,6 +8,7 @@ import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import CreateAccount from "./components/CreateAccount";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/createaccount" component={CreateAccount}></Route>
         </Switch>
       </BrowserRouter>
       <Footer />
