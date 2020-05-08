@@ -6,13 +6,20 @@ const PropertyCard = props => {
   if (props.property.imageURLs && props.property.imageURLs.length > 0 && props.property.imageURLs[0]) {
     img = props.property.imageURLs[0];
   }
+  const propertyLink = `/property?id=${props.property._id}`
   return (
     <div className="pint-card">
-      <img className="pint-card-img" src={img} />
+      <a href={propertyLink}>
+        <img className="pint-card-img" src={img} />
+      </a>
       <div className="pint-overlay pint-street">{props.property.address ? props.property.address.streetName : ""}</div>
       <div className="pint-overlay pint-price">€ {props.property.rent}</div>
-      <div className="pint-overlay pint-favorite">Fav</div>
-      <div className="pint-overlay pint-contact">Mail</div>
+      <div className="pint-overlay pint-favorite">
+        <i className="fa fa-heart"></i>
+      </div>
+      <div className="pint-overlay pint-contact">
+        <i className="fa fa-envelope"></i>
+      </div>
     </div>
   );
 };
