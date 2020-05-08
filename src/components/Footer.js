@@ -17,7 +17,7 @@ class Footer extends Component {
                                         <br></br>
                                             <i className="fa fa-phone  mx-2 "></i> +34 933 04 17 21
                                         <br></br>
-                                            <i className="fa fa-envelope  mx-2"></i><a href="mailto:info@rentcoral.com"> info@rentcoral.com</a>
+                                            <i className="fa fa-envelope  mx-2"></i> <a href="mailto:info@rentcoral.com">info@rentcoral.com</a>
                                         </p>
                                     </div>
                                 </div>

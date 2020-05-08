@@ -5,7 +5,7 @@ class AboutUs extends Component {
 
     render() {
         return (
-            <div className="container mt-5">
+            <div className="container about-us mt-5">
                 <div className="row">
                     <div className="col-md-2 p-4">
                         <br></br>

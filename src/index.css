@@ -11,26 +11,20 @@ code {
   monospace;
 }
 .hero {
-  /* Sizing */
   width: 100vw;
   height: 100vh;
-  /* Flexbox stuff */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Text styles */
   text-align: center;
   color: white;
-  /* Background styles */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .hero h1 {
-  /* Text styles */
   font-size: 5em;
-  /* Margins */
   margin-top: 0;
   margin-bottom: 0.2em;
 }
@@ -42,7 +36,6 @@ code {
   margin-left: 0.4em;
 }
 .card-title {
-  /* Text styles */
   color: #ff7262;
 }
 .pint-card {
@@ -79,17 +72,21 @@ code {
   right: 70px;
   bottom: 10px; 
 }
+.container.about-us {
+  color: grey;
+}
 .footer {
   background-color: #f8f9fa;
+  color: grey;
 }
-/* footer unvisited link */
 .footer a:link {
-  color: #6cb1b9;
+  color: grey;
 }
-/* footer visited link */
 .footer a:visited {
-  color:  #6cb1b99f;
-  ;
+  color: rgb(100, 94, 94);
+}
+.footer a:hover {
+  color: rgb(65, 62, 62);
 }
 .btn.btn-social-icon {
   width: 40px;
@@ -105,7 +102,7 @@ code {
 }
 .btn-outline-facebook:hover {
   background: #3b579d;
-  color: #ffffff;
+  color: white;
 }
 .btn-outline-twitter {
   border: 1px solid #2caae1;
@@ -117,110 +114,106 @@ code {
 }
 .btn-outline-twitter:hover {
   background: #2caae1;
-  color: #ffffff
+  color: white
 }
 .btn-outline-instagram:hover {
   background: #e52d27;
-  color: #ffffff;
+  color: white;
 }
 .btn-facebook {
   background-color: #3b579d !important;
-  color: #ffffff;
+  color: white;
 }
 .btn-twitter {
   background: #2caae1 !important;
-  color: #ffffff;
+  color: white;
 }
 .btn-instagram {
   background: #dc4a38 !important;
-  color: #ffffff;
+  color: white;
 }
 .btn-facebook:hover,
 .btn-facebook:focus {
   background: #2d4278 !important;
-  color: #ffffff;
+  color: white;
 }
 .btn-twitter:hover,
 .btn-twitter:focus {
   background: #1b8dbf !important;
-  color: #ffffff;
+  color: white;
 }
 .btn-instagram:hover,
 .btn-instagram:focus {
   background: #bf3322 !important;
-  color: #ffffff;
+  color: white;
 }
 .login-form {
-  width: 340px;
-    margin: 30px auto;
+  width: 480px;
+  margin: 0 auto;
+  padding: 30px 0;
 }
 .login-form form {
   margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+  padding: 30px;
 }
 .login-form h2 {
-    margin: 0 0 15px;
+  margin: 0 0 15px;
 }
 .login-form .hint-text {
-color: #777;
-padding-bottom: 15px;
-text-align: center;
+  color: #777;
+  padding-bottom: 15px;
+  text-align: center;
 }
 .form-control {
   font-size: 16px;
   transition: all 0.4s;
-  box-shadow: none;
 }
 .form-control:focus {
-      border-color: #5cb85c;
+  border-color: #6cb1b9;
 }
 .form-control, .btn {
   border-radius: 50px;
   outline: none !important;
 }
-.signup-form {
+.sign-form {
   width: 480px;
   margin: 0 auto;
   padding: 30px 0;
 }
-.signup-form form {
+.sign-form form {
   border-radius: 5px;
+  margin-top: 50px;
   margin-bottom: 20px;
-  background: #fff;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 40px;
-}
-.signup-form a {
-  color: #5cb85c;
+  padding: 10px;
+  background: #f7f7f7;
 }    
-.signup-form h2 {
+.sign-form h2 {
   text-align: center;
   font-size: 34px;
   margin: 10px 0 15px;
+  color: grey;
 }
-.signup-form .hint-text {
+.sign-form .hint-text {
   color: #999;
   text-align: center;
   margin-bottom: 20px;
 }
-.signup-form .form-group {
+.sign-form .form-group {
   margin-bottom: 20px;
 }
-.signup-form .btn {        
+.sign-form .btn {        
   font-size: 18px;
   line-height: 26px;
   font-weight: bold;
   text-align: center;
 }
-.signup-btn {
+.sign-btn {
   text-align: center;
-  border-color: #5cb85c;
+  border-color: #6cb1b9;
   transition: all 0.4s;
 }
-.signup-btn:hover {
-  background: #5cb85c;
+.sign-btn:hover {
+  background: #6cb1b99f;
   opacity: 0.8;
 }
 .login-btn {        
@@ -246,16 +239,17 @@ text-align: center;
   font-size: 16px;
   text-align: center;
   line-height: 40px;
-  background: #fff;
+  background: white;
   display: inline-block;
   border: 1px solid #e0e0e0;
   border-radius: 50%;
   position: relative;
   top: -22px;
   z-index: 1;
+  color: grey;
 }
 .social-btn .btn {
-  color: #fff;
+  color: white;
   margin: 10px 0 0 15px;
   font-size: 15px;
   border-radius: 50px;
@@ -283,6 +277,12 @@ text-align: center;
   margin: 3px 10px;
   font-size: 20px;
 }
-.input-group-addon .fa{
+.input-group-addon .fa {
   font-size: 18px;
+}
+.fa {
+  color: white;
+}
+.hint-text a {
+  color: #5cb85c;
 }
