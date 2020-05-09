@@ -29,10 +29,10 @@ class Login extends Component {
                     </div>
                     <div className="clearfix">
                         <label className="pull-left checkbox-inline"><input type="checkbox" /> Remember me</label>
-                        <a href="#" className="pull-right text-success">Forgot Password?</a>
+                        <a href="/forgotpassword" className="pull-right text-success">Forgot Password?</a>
                     </div>
                 </form>
-                <div className="hint-text small">Don't have an account? <a href="#" className="text-success">Register Now!</a></div>
+                <div className="hint-text small">Don't have an account? <a href="/createaccount" className="text-success">Register Now!</a></div>
             </div>
         );
     }

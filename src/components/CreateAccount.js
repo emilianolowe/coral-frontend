@@ -29,7 +29,7 @@ class CreateAccount extends Component {
                         <button type="submit" className="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
                     </div>
                 </form>
-                <div className="hint-text small">Already have an account? <a href="#">Login here</a></div>
+                <div className="hint-text small">Already have an account? <a href="/login">Login here</a></div>
             </div>
         );
     }

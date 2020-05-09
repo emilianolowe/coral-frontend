@@ -9,6 +9,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
   return (
@@ -16,13 +17,14 @@ function App() {
       <NavBar />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/home" component={HomePage}></Route>
+          <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/gallery" component={PropertyGallery}></Route>
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/createaccount" component={CreateAccount}></Route>
+          <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
         </Switch>
       </BrowserRouter>
       <Footer />
