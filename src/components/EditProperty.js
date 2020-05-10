@@ -117,6 +117,22 @@ class EditProperty extends Component {
           }
         });
     
+    } else if (["typeOfStreet", "streetName", 
+        "buildingNumber", "floorNumber", "doorNumber",
+        "postalCode", "city", "province", 
+        "region", "country"].includes(event.target.name)) {
+              
+      this.setState({
+        property: {
+          ...this.state.property,
+          address: {
+            ...this.state.property.address,
+            [fieldName]: fieldValue
+          }
+        }
+      });
+    
+
     } else {
       this.setState({
         property: {
@@ -231,7 +247,7 @@ class EditProperty extends Component {
           <div className="form-group">
             <input type="checkbox" id="furnitured" name="furnitured"
               className="form-check-input" onChange={this.handleInputChange} />
-            <label>My property is furnitured</label>
+            <label>My property is furnished</label>
           </div>
           <div className="form-group">
             <input type="checkbox" id="nearMetroStation" name="nearMetroStation"
