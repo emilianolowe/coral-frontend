@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Cookies from 'universal-cookie';
-import { getProperty, getUserId } from './PropertiesDAO';
+import { getUserId } from './PropertiesDAO';
 
 class EditProperty extends Component {
 

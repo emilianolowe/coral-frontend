@@ -5,15 +5,29 @@ import NavBar from './components/NavBar';
 import PropertyGallery from './components/PropertyGallery';
 import PropertyDetailsPage from './components/PropertyDetailsPage';
 import OwnersLanding from './components/OwnersLanding';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
 import MyProperties from "./components/MyProperties";
 import EditProperty from "./components/EditProperty";
+import Cookies from 'universal-cookie';
 
 function App() {
+
+  const ProtectedRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => {
+      const cookies = new Cookies();
+      if (cookies.get("coraluser")) {
+        console.log("logged in. returning normal component")
+        return (<Component {...props} />);
+      }
+      console.log("not logged in. returning redirect")
+      return (<Redirect to={{ pathname: '/login', state: { from: props.location }}} /> )
+    }} />
+ );
+
   return (
     <div>
       <NavBar />
@@ -22,8 +36,8 @@ function App() {
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/gallery" component={PropertyGallery}></Route>
-          <Route exact path="/myproperties" component={MyProperties}></Route>
-          <Route exact path="/addproperty" component={EditProperty}></Route>
+          <ProtectedRoute path='/myproperties' component={MyProperties} />
+          <ProtectedRoute path='/addproperty' component={EditProperty} />
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
