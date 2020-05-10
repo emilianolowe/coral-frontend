@@ -30,20 +30,22 @@ class ImagesCarousel extends Component {
     }
 
     render() {
+        const imgSize = this.props.size === "card" ? "d-block w-100 pint-detail-img-small" : "d-block w-100 pint-detail-img";
+
         const indicators = this.state.property.imageURLs.map((img, idx) => (
-            <li key={idx} data-target="#imgCarousel" 
-                data-slide-to={idx} 
-                className={idx===0?"active":""}>
-            </li>            
+            <li key={idx} data-target="#imgCarousel"
+                data-slide-to={idx}
+                className={idx === 0 ? "active" : ""}>
+            </li>
         ));
         const images = this.state.property.imageURLs.map((img, idx) => (
-            <div key={idx}  className={idx===0?"carousel-item active":"carousel-item"}>
-                <img className="d-block w-100 pint-detail-img" src={img} alt="property slide" />
+            <div key={idx} className={idx === 0 ? "carousel-item active" : "carousel-item"}>
+                <img className={imgSize} src={img} alt="property slide" />
             </div>
         ));
         return (
             <div className="container">
-                <div id="imgCarousel" className="carousel slide" data-ride="carousel">
+                <div id="imgCarousel" className="carousel slide" data-interval="false">
                     <ol className="carousel-indicators">
                         {indicators}
                     </ol>

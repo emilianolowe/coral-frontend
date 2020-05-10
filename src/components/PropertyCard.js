@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import Carousel from "./ImagesCarousel";
 
 const PropertyCard = props => {
   let img = "https://media.istockphoto.com/photos/modern-house-interior-design-project-sketch-3d-rendering-picture-id973410708";
@@ -10,7 +10,8 @@ const PropertyCard = props => {
   return (
     <div className="pint-card">
       <a href={propertyLink}>
-        <img className="pint-card-img" src={img} />
+        {/*<img className="pint-card-img" src={img} />*/}
+        <Carousel id={props.property._id} size="card"></Carousel>
       </a>
       <div className="pint-overlay pint-street">{props.property.address ? props.property.address.streetName : ""}</div>
       <div className="pint-overlay pint-price">€ {props.property.rent}</div>

@@ -111,7 +111,7 @@ class PropertyDetails extends Component {
                 <br /><br />
                 {propDetails}
                 <div className="more-seperator"><b>more like this</b></div>
-                <PropertyGallery />
+                <PropertyGallery hideFilter={true} />
             </div>
         );
     }
