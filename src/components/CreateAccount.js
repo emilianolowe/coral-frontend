@@ -85,7 +85,7 @@ class CreateAccount extends Component {
                     if (data.success) {
                         const cookies = new Cookies();
                         cookies.set('coraltoken', data.token, { path: '/' });
-                        alert("User registered successfully")
+                        alert("User registered successfully");
                     }
                 })
                 .catch(err => console.log("Error loggin in: ", err.message))

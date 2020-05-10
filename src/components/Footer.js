@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Footer extends Component {
     render() {
         return (
-            <footer>
-                <div className="container-fluid footer">
+            <footer className="k-footer">
+                <div className="container-fluid">
                     <div className="container">
                         <div className="row">
                             <div className="py-4 col-md-4 d-flex justify-content-center">

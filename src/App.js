@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
+import MyProperties from "./components/MyProperties";
+import EditProperty from "./components/EditProperty";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/gallery" component={PropertyGallery}></Route>
+          <Route exact path="/myproperties" component={MyProperties}></Route>
+          <Route exact path="/addproperty" component={EditProperty}></Route>
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>

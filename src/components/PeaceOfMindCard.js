@@ -9,7 +9,8 @@ class PeaceOfMindCard extends Component {
           <Card imgsrc="img/peace-of-mind.jpg"
             title="Peace Of Mind"
             bodyText="We make renting your home safe and easy."
-            btnText="List A Property" />
+            btnText="List A Property" 
+            linkurl="/myproperties" />
         </div>
       </div>
     );
