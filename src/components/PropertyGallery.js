@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Card from "./PropertyCard";
+import PropertyFilter from "./PropertyFilter";
 
 class Gallery extends Component {
+
+  // filter function
 
   constructor(props) {
     super(props)
@@ -10,9 +13,7 @@ class Gallery extends Component {
     }
 
     this.fetchData = this.fetchData.bind(this);
-
     this.fetchData();
-
   }
 
   // refactor to try/catch async from promise/callback?
@@ -24,27 +25,25 @@ class Gallery extends Component {
         this.setState({
           properties: response
         })
-      }) // amazing
+      })
   }
 
   handleClick() { }
 
   render() {
-    // Nano: this constant will receive the resulting JSX to show whatever you want
-    // Combine JSXResult object with Card object 
+    // This constant will receive the resulting JSX to show whatever you want
     const theJSXResult = this.state.properties.map(property => (
       <div>
         <Card property={property} />
       </div>
-      // <div>
-      //   <div>Hey!! I'm a property!!!</div>
-      //   <div>This is the Description: {property.description}</div>
-      //   <div>This is my image: <img src={property.imageURLs[0]} alt="property" /></div>
-      //   <br /><br />
-      // </div>
     ))
+    let filter = "";
+    if (!this.props.hideFilter) {
+      filter = (<PropertyFilter />);
+    }
     return (
       <div className="container">
+        {filter}
         <div className="card-deck">
           {theJSXResult}
         </div>
