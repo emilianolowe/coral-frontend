@@ -59,6 +59,7 @@ class Login extends Component {
             if (data.success) {
                 const cookies = new Cookies();
                 cookies.set('coraltoken', data.token, { path: '/' });
+                alert("User successfully logged in")
             }
         })
         .catch((err) => {
