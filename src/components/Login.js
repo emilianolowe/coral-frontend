@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Cookies from 'universal-cookie';
+import { login } from './PropertiesDAO';
 
 class Login extends Component {
     constructor(props) {
@@ -36,37 +36,12 @@ class Login extends Component {
             return;
         }
 
-        // CALL POST
-        this.login(this.state.loginForm.username.value, this.state.loginForm.password.value);
+        login(this.state.loginForm.username.value, 
+            this.state.loginForm.password.value,
+            status => alert(status?"Successfully logged in":"Wrong username or password. Please try again."));
+
         event.preventDefault();
     }
-
-    login(username, password) {
-        console.log("will fetch");
-        fetch('http://localhost:3000/v1/users/login', {
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify(
-                {
-                    username: username, 
-                    password: password
-                })
-        })
-        .then(res => res.json())
-        .then((data) => {
-            if (data.success) {
-                const cookies = new Cookies();
-                cookies.set('coraltoken', data.token, { path: '/' });
-                alert("User successfully logged in")
-            }
-        })
-        .catch((err) => {
-            console.log("error fetching: ", err.message)
-            alert("Invalid email or password. Please try again.");
-        });
-    }    
 
     handleBlur(event) {
         const fieldName = event.target.name;

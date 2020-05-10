@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Cookies from 'universal-cookie';
+import { signup, login } from './PropertiesDAO';
 
 class CreateAccount extends Component {
 
@@ -27,13 +27,13 @@ class CreateAccount extends Component {
             }
         }
         
-        this.handleLogin = this.handleLogin.bind(this);
+        this.handleSignup = this.handleSignup.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
     }
 
-    handleLogin(event) {
-        console.log("Handle Login");
+    handleSignup(event) {
+        console.log("Handle Signup");
         if (this.state.loginForm.username.value === '' || 
                 this.state.loginForm.password.value === '' ||
                 !this.state.loginForm.username.valid) {
@@ -48,55 +48,21 @@ class CreateAccount extends Component {
         }
 
         // CALL POST
-        this.login(this.state.loginForm.username.value, this.state.loginForm.password.value);
+        signup(this.state.loginForm.username.value, 
+            this.state.loginForm.password.value,
+            status => {
+                if (status) {
+                    login(this.state.loginForm.username.value,
+                        this.state.loginForm.password.value,
+                        success => {console.log("successfully logged in")})
+                    alert("User created successfully")
+                } else {
+                    alert("There was a problem creating that user")
+                }
+            });
+
         event.preventDefault();
     }
-
-    login(username, password) {
-        console.log("will fetch");
-        fetch('http://localhost:3000/v1/users/signup', {
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify({
-                    username: username, 
-                    password: password})
-        })
-        .then(res => res.json())
-        .then((data) => {
-            console.log(data);
-            if (data.err) {
-                throw new Error(data.err.message)
-            }
-            if (data.success) {
-                // Login
-                fetch('http://localhost:3000/v1/users/login', {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    method: "POST",
-                    body: JSON.stringify({
-                        username: username, 
-                        password: password})
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        const cookies = new Cookies();
-                        cookies.set('coraltoken', data.token, { path: '/' });
-                        alert("User registered successfully");
-                    }
-                })
-                .catch(err => console.log("Error loggin in: ", err.message))
-
-            }
-        })
-        .catch((err) => {
-            console.log("error fetching: ", err.message)
-            alert(err.message);
-        });
-    }    
 
     handleBlur(event) {
         const fieldName = event.target.name;
@@ -144,7 +110,7 @@ class CreateAccount extends Component {
     render() {
         return (
             <div className="sign-form">
-                <form onSubmit={this.handleLogin}>
+                <form onSubmit={this.handleSignup}>
                     <h2 className="text-center">Create an Account</h2>
                     <p className="hint-text">Sign up with your social media account or email address.</p>
                     <div className="social-btn text-center">

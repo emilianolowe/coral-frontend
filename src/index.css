@@ -101,17 +101,17 @@ code {
 .container.about-us {
   color: grey;
 }
-.footer {
+.k-footer {
   background-color: #f8f9fa;
   color: grey;
 }
-.footer a:link {
+.k-footer a:link {
   color: grey;
 }
-.footer a:visited {
+.k-footer a:visited {
   color: rgb(100, 94, 94);
 }
-.footer a:hover {
+.k-footer a:hover {
   color: rgb(65, 62, 62);
 }
 .btn.btn-social-icon {
@@ -340,4 +340,21 @@ code {
   top: -22px;
   z-index: 1;
   color: grey;
+}
+
+.float-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.inside-float-button{
+	margin-top:22px;
 }
