@@ -8,7 +8,9 @@ class Footer extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="py-4 col-md-4 d-flex justify-content-center">
-                                <img className="logo" src="/img/corl.svg" height="100" width="93" alt="Coral logo" ></img>
+                                <a href="/">
+                                    <img className="logo" src="/img/corl.svg" height="100" width="93" alt="Coral logo" ></img>
+                                </a>
                             </div>
                             <div className="col-md-4 text-center text-md-left">
                                 <div className="py-2 my-4">

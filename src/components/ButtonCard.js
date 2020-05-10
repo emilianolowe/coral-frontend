@@ -10,7 +10,7 @@ const ButtonCard = props => {
         <div className="card-body text-dark">
           <h4 className="card-title">{props.title}</h4>
           <p className="card-text text-secondary">{props.bodyText}</p>
-          <a href="#" className="btn btn-outline-dark">{props.btnText}</a>
+          <a href="#" className="btn btn-info">{props.btnText}</a>
         </div>
       </div>
     </div>

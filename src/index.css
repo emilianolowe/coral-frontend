@@ -277,6 +277,9 @@ code {
   border: none;
   transition: all 0.4s;
 }
+.social-btn .btn .fa {
+  color:white;
+}
 .social-btn .btn:first-child {
 	margin-left: 0;
 }
@@ -297,11 +300,16 @@ code {
   margin: 3px 10px;
   font-size: 20px;
 }
+
+.btn-social-icon .fa {
+  color:white;
+}
+
 .input-group-addon .fa {
   font-size: 18px;
 }
 .fa {
-  color: white;
+  color: rgb(103, 101, 101);
 }
 .hint-text a {
   color: #5cb85c;

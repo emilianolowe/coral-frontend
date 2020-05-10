@@ -15,7 +15,6 @@ class OwnersLanding extends Component {
         <div class="row mt-5"></div>
         <PeaceOfMindCard />
         <ServiceProvidersCard />
-        <VirtuallySignCard />
       </div>
     );
   }
