@@ -38,7 +38,7 @@ class ImagesCarousel extends Component {
         ));
         const images = this.state.property.imageURLs.map((img, idx) => (
             <div key={idx}  className={idx===0?"carousel-item active":"carousel-item"}>
-                <img className="d-block w-100" src={img} alt="property slide" />
+                <img className="d-block w-100 pint-detail-img" src={img} alt="property slide" />
             </div>
         ));
         return (

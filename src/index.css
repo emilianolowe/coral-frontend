@@ -72,6 +72,26 @@ code {
   right: 70px;
   bottom: 10px; 
 }
+.pint-detail {
+  height: 600px;
+  width: 80vw;
+  position: relative;
+}
+.pint-detail-img {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.pint-detail-title {
+  font-size: 24px;
+  padding: 10px;
+}
+.pint-detail-text {
+  font-size: 18px;
+  padding: 10px;
+}
 .container.about-us {
   color: grey;
 }
@@ -285,4 +305,25 @@ code {
 }
 .hint-text a {
   color: #5cb85c;
+}
+.more-seperator {
+  margin: 50px 0 15px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+.more-seperator b {
+  padding: 0 10px;
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  background: white;
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  position: relative;
+  top: -22px;
+  z-index: 1;
+  color: grey;
 }
