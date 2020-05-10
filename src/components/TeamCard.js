@@ -9,7 +9,7 @@ class TeamCard extends Component {
           <div className="col-lg-3">
           <Card imgsrc="img/nadine.png"
               title="Nadine Cumberbatch"
-              bodyText="Business Analyst and Product Manager"/>
+              bodyText="Product Manager and Digital Strategist"/>
           </div>
           <div className="col-lg-3">
             <Card imgsrc="img/lourenco.png"
@@ -24,7 +24,7 @@ class TeamCard extends Component {
           <div className="col-lg-3">
             <Card imgsrc="img/kanya.png"
               title="Kanya Lyons"
-              bodyText="Front End Developer, Product Designer, and UX Writer"/>
+              bodyText="Product Manager, Marketing Director, UX/UI Designer, and Front End Developer"/>
           </div>
         </div>
       </div>
