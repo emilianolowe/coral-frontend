@@ -85,6 +85,7 @@ class CreateAccount extends Component {
                     if (data.success) {
                         const cookies = new Cookies();
                         cookies.set('coraltoken', data.token, { path: '/' });
+                        alert("User registered successfully")
                     }
                 })
                 .catch(err => console.log("Error loggin in: ", err.message))
@@ -93,7 +94,7 @@ class CreateAccount extends Component {
         })
         .catch((err) => {
             console.log("error fetching: ", err.message)
-            alert("Invalid email or password. Please try again.");
+            alert(err.message);
         });
     }    
 
