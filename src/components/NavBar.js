@@ -23,7 +23,7 @@ class NavBar extends Component {
                                     <a className="nav-link" href="/gallery">Search</a>
                                 </li>
                             </ul>
-                            <a class="btn btn-sm btn-outline-secondary" href="/login">Sign up</a>
+                            <a className="btn btn-sm btn-outline-secondary" href="/login">Sign up</a>
                         </div>
                     </nav>
                 </div>
