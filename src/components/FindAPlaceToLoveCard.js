@@ -9,7 +9,8 @@ class FindAPlaceToLoveCard extends Component {
           <Card imgsrc="img/find-a-place-to-love.jpeg"
               title="Find A Place To Love"
               bodyText="A reimagined way to discover, rent, and furnish your next home."
-              btnText="Search Now"/>
+              btnText="Search Now"
+              linkurl="/gallery" />
           </div>
         </div>
     );

@@ -9,7 +9,8 @@ class ServiceProvidersCard extends Component {
           <Card imgsrc="img/service-providers.jpeg"
             title="Service Providers"
             bodyText="Contract vetted service providers like handymen, plumbers, and housekeepers."
-            btnText="Find Help" />
+            btnText="Find Help"
+            href="" />
         </div>
       </div>
     );
