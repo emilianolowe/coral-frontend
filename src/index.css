@@ -114,6 +114,9 @@ code {
 .k-footer a:hover {
   color: rgb(65, 62, 62);
 }
+.btn.btn-info {
+  border-radius: 50px !important;
+}
 .btn.btn-social-icon {
   width: 40px;
   height: 40px;
@@ -121,6 +124,7 @@ code {
 }
 .btn.btn-rounded {
   border-radius: 50px;
+  padding: 10px;
 }
 .btn-outline-facebook {
   border: 1px solid #3b579d;
