@@ -310,11 +310,9 @@ code {
   margin: 3px 10px;
   font-size: 20px;
 }
-
 .btn-social-icon .fa {
   color:white;
 }
-
 .input-group-addon .fa {
   font-size: 18px;
 }
@@ -345,7 +343,6 @@ code {
   z-index: 1;
   color: grey;
 }
-
 .float-button{
 	position:fixed;
 	width:60px;
@@ -358,7 +355,6 @@ code {
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
 }
-
 .inside-float-button{
 	margin-top:22px;
 }
