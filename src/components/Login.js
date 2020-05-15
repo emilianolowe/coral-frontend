@@ -20,7 +20,7 @@ class Login extends Component {
                 }
             }
         }
-        
+
         this.handleLogin = this.handleLogin.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
@@ -28,17 +28,17 @@ class Login extends Component {
 
     handleLogin(event) {
         console.log("Handle Login");
-        if (this.state.loginForm.username.value === '' || 
-                this.state.loginForm.password.value === '' ||
-                !this.state.loginForm.username.valid) {
+        if (this.state.loginForm.username.value === '' ||
+            this.state.loginForm.password.value === '' ||
+            !this.state.loginForm.username.valid) {
             alert("please provide email and password");
             event.preventDefault();
             return;
         }
 
-        login(this.state.loginForm.username.value, 
+        login(this.state.loginForm.username.value,
             this.state.loginForm.password.value,
-            status => alert(status?"Successfully logged in":"Wrong username or password. Please try again."));
+            status => alert(status ? "Successfully logged in" : "Wrong username or password. Please try again."));
 
         event.preventDefault();
     }
@@ -60,7 +60,7 @@ class Login extends Component {
     handleInputChange = (formName) => (event) => {
         const fieldName = event.target.name;
         const fieldValue = event.target.value;
-  
+
         this.setState({
             [formName]: {
                 ...this.state[formName],
@@ -74,7 +74,7 @@ class Login extends Component {
         });
     }
 
-    validateField (fieldName, fieldValue) {
+    validateField(fieldName, fieldValue) {
         if (fieldName === "password") {
             // returns true if !== "" (valid situation) 
             return fieldValue !== "";
@@ -93,35 +93,37 @@ class Login extends Component {
                 <form onSubmit={this.handleLogin}>
                     <h2 className="text-center">Sign in</h2>
                     <div className="social-btn text-center">
-                        <a href="#" className="btn btn-primary btn-lg"><i className="fa fa-facebook"></i> Facebook</a>
-                        <a href="#" className="btn btn-info btn-lg"><i className="fa fa-twitter"></i> Twitter</a>
-                        <a href="#" className="btn btn-danger btn-lg"><i className="fa fa-google"></i> Google</a>
+                        <a href="#" className="btn btn-facebook btn-lg"><i className="fa fa-facebook"></i>Facebook</a>
+                        <a href="#" className="btn btn-twitter btn-lg"><i className="fa fa-twitter"></i>Twitter</a>
+                        <a href="#" className="btn btn-instagram btn-lg"><i className="fa fa-google"></i>Google</a>
                     </div>
                     <div className="or-seperator"><b>or</b></div>
                     <div className="form-group">
                         <div className="input-group">
                             <span className="input-group-addon"></span>
-                            <input type="text" className="form-control" 
-                                name="username" placeholder="E-mail" required="required" 
+                            <input type="text" className="form-control"
+                                name="username" placeholder="E-mail" required="required"
                                 onChange={this.handleInputChange('loginForm')}
-                                onBlur={this.handleBlur}/>
+                                onBlur={this.handleBlur} />
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="input-group">
                             <span className="input-group-addon"></span>
-                            <input type="password" className="form-control" 
+                            <input type="password" className="form-control"
                                 name="password" placeholder="Password" required="required"
                                 onChange={this.handleInputChange('loginForm')}
-                                onBlur={this.handleBlur}/>
+                                onBlur={this.handleBlur} />
                         </div>
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-success btn-block login-btn">Sign in</button>
+                        <button type="submit" className="btn btn-info btn-lg btn-block signup-btn">Sign in</button>
                     </div>
                     <div className="clearfix">
-                        <label className="pull-left checkbox-inline"><input type="checkbox" /> Remember me</label>
-                        <a href="/forgotpassword" className="pull-right text-success">Forgot Password?</a>
+                        <div className="hint-text pull-left checkbox-inline"><input type="checkbox" /> Remember me</div>
+                        <div className="hint-text pull-right">
+                            <a href="/forgotpassword">Forgot Password?</a>
+                        </div>
                     </div>
                 </form>
                 <div className="hint-text small">Don't have an account? <a href="/createaccount" className="text-success">Register Now!</a></div>

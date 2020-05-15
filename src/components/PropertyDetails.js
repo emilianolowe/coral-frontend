@@ -44,8 +44,8 @@ class PropertyDetails extends Component {
                             <div className="col-8">
                                 <h2>{this.state.property.title}</h2>
                             </div>
-                            <div className="col-4 d-flex justify-content-end">
-                                <button className="btn btn-info">BOOK A VISIT</button>
+                            <div className="col-4">
+                                <div className="btn btn-info">Book a Visit</div>
                             </div>
                         </div>
                         <div className="row">
@@ -53,9 +53,9 @@ class PropertyDetails extends Component {
                                 <p>
                                     {street}
                                 </p>
-                                <span class="badge badge-info mr-3">see map</span>
-                                <span class="badge badge-info mr-3">see street</span>
-                                <span class="badge badge-info">360 video</span>
+                                <div className="btn btn-info">Map</div>
+                                <div className="btn btn-info">Street</div>
+                                <div className="btn btn-info">360 Video</div>
                             </div>
                         </div>
                         <div className="row mt-3">

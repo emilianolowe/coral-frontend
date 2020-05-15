@@ -7,8 +7,8 @@ class OwnersLanding extends Component {
   render() {
     return (
       <div>
-        <Hero heroHeader="Rent Guarantee"
-          subHeader="We insure that you collect rent every month. Long term rentals only."
+        <Hero heroHeader="Vetted Renters"
+          subHeader="Rent your property securely. Long term rentals only."
           imgSrc="img/rent-gaurantee.jpeg"
           imgAlt="Barcelona street view" />
         <div class="row mt-5"></div>

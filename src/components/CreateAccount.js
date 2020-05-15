@@ -114,9 +114,9 @@ class CreateAccount extends Component {
                     <h2 className="text-center">Create an Account</h2>
                     <p className="hint-text">Sign up with your social media account or email address.</p>
                     <div className="social-btn text-center">
-                        <a href="#" className="btn btn-primary btn-lg"><i className="fa fa-facebook"></i> Facebook</a>
-                        <a href="#" className="btn btn-info btn-lg"><i className="fa fa-twitter"></i> Twitter</a>
-                        <a href="#" className="btn btn-danger btn-lg"><i className="fa fa-google"></i> Google</a>
+                        <a href="#" className="btn btn-facebook btn-lg"><i className="fa fa-facebook"></i> Facebook</a>
+                        <a href="#" className="btn btn-twitter btn-lg"><i className="fa fa-twitter"></i> Twitter</a>
+                        <a href="#" className="btn btn-instagram btn-lg"><i className="fa fa-google"></i> Google</a>
                     </div>
                     <div className="or-seperator"><b>or</b></div>
                     <div className="form-group">
@@ -138,7 +138,7 @@ class CreateAccount extends Component {
                             onBlur={this.handleBlur}/>
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
+                        <button type="submit" className="btn btn-info btn-lg btn-block signup-btn">Sign Up</button>
                     </div>
                 </form>
                 <div className="hint-text small">Already have an account? <a href="/login">Login here</a></div>

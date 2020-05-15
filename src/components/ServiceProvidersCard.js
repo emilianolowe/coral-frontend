@@ -10,7 +10,7 @@ class ServiceProvidersCard extends Component {
             title="Service Providers"
             bodyText="Contract vetted service providers like handymen, plumbers, and housekeepers."
             btnText="Find Help"
-            href="" />
+            linkurl="/providers" />
         </div>
       </div>
     );
