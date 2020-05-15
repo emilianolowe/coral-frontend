@@ -10,6 +10,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+/* basic button: className="btn btn-info" */
+.btn.btn-info {
+  border-radius: 50px;
+  background: #6cb1b9;
+  border: 2px solid #6cb1b9;
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+}
+/* basic button on hover & focus  */
+.btn.btn-info:hover,
+.btn.btn-info:focus {
+  background: #58939b;
+  border: 2px solid #58939b;
+  color: white;
+}
+/* round button: className="btn btn-round" */
+.btn.btn-round {
+  border-radius: 40px;
+  padding: 0px;
+}
+/* round social media button: className="btn btn-social-icon" */
+.btn.btn-social-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-weight: bold;
+}
+.btn.btn-logo {
+  color: #ff7262;
+}
 .hero {
   width: 100vw;
   height: 100vh;
@@ -37,13 +68,14 @@ code {
   margin-left: 0.4em;
 }
 .card-title {
-  color: #ff7262;
+  color: #ff7262 !important;
 }
 .pint-card {
   height: 300px;
   width: 500px;
   position: relative;
   margin: 10px;
+  color: rgb(65, 62, 62);
 }
 .pint-card-img {
   border-radius: 25px;
@@ -53,7 +85,7 @@ code {
 }
 .pint-overlay {
   background-color: rgba(255,255,255, 0.8);
-  border-radius: 35px;
+  border-radius: 50px;
   padding: 10px;
   position: absolute;
 }
@@ -63,20 +95,28 @@ code {
 }
 .pint-street {
   left: 25px;
-  top: 10px; 
+  top: 10px;
+  color: rgb(103, 101, 101); 
 }
 .pint-favorite {
   right: 25px;
-  bottom: 10px; 
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
 }
 .pint-contact {
   right: 80px;
-  bottom: 10px; 
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
 }
 .pint-detail {
   height: 600px;
   width: 80vw;
   position: relative;
+  color: rgb(103, 101, 101);
 }
 .pint-detail-img {
   border-top-left-radius: 25px;
@@ -84,20 +124,24 @@ code {
   height: 500px;
   width: 100%;
   object-fit: cover;
+  color: rgb(103, 101, 101);
 }
 .pint-detail-img-small {
   border-radius: 25px;
   height: 300px;
   width: 100%;
   object-fit: cover;
+  color: rgb(103, 101, 101);
 }
 .pint-detail-title {
   font-size: 24px;
   padding: 10px;
+  color: rgb(103, 101, 101);
 }
 .pint-detail-text {
   font-size: 18px;
   padding: 10px;
+  color: rgb(103, 101, 101);
 }
 .container.about-us {
   color: grey;
@@ -114,18 +158,6 @@ code {
 }
 .k-footer a:hover {
   color: rgb(65, 62, 62);
-}
-.btn.btn-info {
-  border-radius: 50px !important;
-}
-.btn.btn-social-icon {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-}
-.btn.btn-rounded {
-  border-radius: 50px;
-  padding: 10px;
 }
 .btn-outline-facebook {
   border: 1px solid #3b579d;
@@ -161,22 +193,22 @@ code {
 }
 .btn-instagram {
   background: #dc4a38 !important;
-  color: white;
+  color: white !important;
 }
 .btn-facebook:hover,
 .btn-facebook:focus {
   background: #2d4278 !important;
-  color: white;
+  color: white !important;
 }
 .btn-twitter:hover,
 .btn-twitter:focus {
   background: #1b8dbf !important;
-  color: white;
+  color: white !important;
 }
 .btn-instagram:hover,
 .btn-instagram:focus {
   background: #bf3322 !important;
-  color: white;
+  color: white !important;
 }
 .login-form {
   width: 480px;
@@ -190,10 +222,16 @@ code {
 .login-form h2 {
   margin: 0 0 15px;
 }
-.login-form .hint-text {
+.hint-text {
   color: #777;
   padding-bottom: 15px;
-  text-align: center;
+  text-align: center !important;
+}
+.hint-text a {
+  color: #6cb1b9 !important;
+}
+.hint-text a:hover {
+  color: #6cb1b99f !important;
 }
 .form-control {
   font-size: 16px;
@@ -224,32 +262,13 @@ code {
   margin: 10px 0 15px;
   color: grey;
 }
-.sign-form .hint-text {
+.hint-text {
   color: #999;
   text-align: center;
   margin-bottom: 20px;
 }
 .sign-form .form-group {
   margin-bottom: 20px;
-}
-.sign-form .btn {        
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: bold;
-  text-align: center;
-}
-.sign-btn {
-  text-align: center;
-  border-color: #6cb1b9;
-  transition: all 0.4s;
-}
-.sign-btn:hover {
-  background: #6cb1b99f;
-  opacity: 0.8;
-}
-.login-btn {        
-  font-size: 15px;
-  font-weight: bold;
 }
 .or-seperator {
   margin: 50px 0 15px;
@@ -320,9 +339,6 @@ code {
 .fa {
   color: rgb(103, 101, 101);
 }
-.hint-text a {
-  color: #5cb85c;
-}
 .more-seperator {
   margin: 50px 0 15px;
   text-align: center;
@@ -350,7 +366,7 @@ code {
 	height:60px;
 	bottom:40px;
 	right:40px;
-	background-color:#0C9;
+	background-color:#6cb1b9;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
@@ -358,11 +374,4 @@ code {
 }
 .inside-float-button{
 	margin-top:22px;
-}
-
-.lourenco {
-  margin: auto;
-}
-.kanya {
-  font-size: large;
 }

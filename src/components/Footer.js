@@ -9,7 +9,7 @@ class Footer extends Component {
                         <div className="row">
                             <div className="py-4 col-md-4 d-flex justify-content-center">
                                 <a href="/">
-                                    <img className="logo" src="/img/corl.svg" height="100" width="93" alt="Coral logo" ></img>
+                                    <img className="logo" src="/img/corl.svg" height="80" width="74" alt="Coral logo" ></img>
                                 </a>
                             </div>
                             <div className="col-md-4 text-center text-md-left">
@@ -29,17 +29,17 @@ class Footer extends Component {
                                 <p>Coral is a reimagined way to discover, tour, and rent a home. We specialize in long-term rentals.</p>
                                 <div className="py-2">
                                     <a className="mr-3" href="#">
-                                        <button type="button" className="btn-facebook btn btn-social-icon btn-rounded">
+                                        <button type="button" className="btn btn-round btn-facebook btn-social-icon">
                                             <i className="fa fa-facebook"></i>
                                         </button>
                                     </a>
                                     <a className="mr-3" href="#">
-                                        <button type="button" className="btn btn-social-icon btn-twitter btn-rounded">
+                                        <button type="button" className="btn btn-social-icon btn-twitter btn-round">
                                             <i className="fa fa-twitter"></i>
                                         </button>
                                     </a>
                                     <a href="#">
-                                        <button type="button" className="btn btn-social-icon btn-instagram btn-rounded">
+                                        <button type="button" className="btn btn-social-icon btn-instagram btn-round">
                                             <i className="fa fa-instagram"></i>
                                         </button>
                                     </a>

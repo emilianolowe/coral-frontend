@@ -44,7 +44,7 @@ class ImagesCarousel extends Component {
             </div>
         ));
         return (
-            <div className="container">
+            <div className="container  mt-4">
                 <div id="imgCarousel" className="carousel slide" data-interval="false">
                     <ol className="carousel-indicators">
                         {indicators}

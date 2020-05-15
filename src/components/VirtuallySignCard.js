@@ -8,9 +8,9 @@ class VirtuallySignCard extends Component {
         <div className="col-md-8 offset-md-2">
           <Card imgsrc="img/virtually-sign.jpg"
             title="Virtually Sign"
-            bodyText="No bureaucracy! Sign all paperwork digitally with our safe and easy tools."
-            btnText="Sign Up"
-            linkurl="/createaccount" />
+            bodyText="Easily sign documents online."
+            btnText="Learn More"
+            linkurl="/aboutus" />
         </div>
       </div>
     );
