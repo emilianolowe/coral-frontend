@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Hero from "./Hero";
+import Hero from "./OwnersHero";
 import PeaceOfMindCard from "./PeaceOfMindCard";
-import VirtuallySignCard from "./VirtuallySignCard";
 import ServiceProvidersCard from "./ServiceProvidersCard";
 
 class OwnersLanding extends Component {
