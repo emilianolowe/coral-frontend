@@ -8,7 +8,7 @@ const PropertyCard = props => {
   }
   const propertyLink = `/property?id=${props.property._id}`
   return (
-    <div className="pint-card">
+    <div className="pint-card mt-5">
       <a href={propertyLink}>
         {/*<img className="pint-card-img" src={img} />*/}
         <Carousel id={props.property._id} size="card"></Carousel>

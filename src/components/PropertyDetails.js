@@ -35,7 +35,7 @@ class PropertyDetails extends Component {
             + this.state.property.address.city    
         }
         return (
-            <div className="container">
+            <div className="container mt-5">
                 <br /><br />
                 <div className="container ">
                     <ImagesCarousel id={this.props.id} />

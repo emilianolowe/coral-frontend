@@ -36,14 +36,16 @@ class MyProperties extends Component {
       </div>
     ))
     return (
-      <div className="container">
+      <div className="container mt-5">
         <h1>My Properties</h1>
         <div className="card-deck">
           {theJSXResult}
         </div>
-        <a href="/addproperty" class="float-button">
-          <i class="fa fa-plus inside-float-button"></i>
-        </a>
+        <div className="btn btn-info">
+          <a href="/addproperty" className="float-button">
+            <i class="fa fa-plus inside-float-button"></i>
+          </a>
+        </div>
       </div>
     );
   }

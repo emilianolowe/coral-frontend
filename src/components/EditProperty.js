@@ -148,7 +148,6 @@ class EditProperty extends Component {
         }
       });
 
-
     } else {
       this.setState({
         property: {
@@ -167,39 +166,39 @@ class EditProperty extends Component {
           <div className="row">
             <div className="col-8">
               <form onSubmit={this.handleSave}>
-                <h2 className="mt-5">Let's complete the address</h2>
+                <h2 className="mt-5">Rental Property Address</h2>
                 <div className="form-group">
-                  <label>Type of Street</label>
+                  <label>Street Type</label>
                   <input type="text" id="typeOfStreet" name="typeOfStreet"
                     value={this.state.property.address ? this.state.property.address.typeOfStreet : ""}
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Street name</label>
+                  <label>Street Name</label>
                   <input type="text" id="streetName" name="streetName"
                     value={this.state.property.address ? this.state.property.address.streetName : ""}
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Building number</label>
+                  <label>Address</label>
                   <input type="text" id="buildingNumber" name="buildingNumber"
                     value={this.state.property.address ? this.state.property.address.buildingNumber : ""}
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Floor number</label>
+                  <label>Floor Number</label>
                   <input type="text" id="floorNumber" name="floorNumber"
                     value={this.state.property.address ? this.state.property.address.floorNumber : ""}
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Door number</label>
+                  <label>Door Number</label>
                   <input type="text" id="doorNumber" name="doorNumber"
                     value={this.state.property.address ? this.state.property.address.doorNumber : ""}
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Postal code</label>
+                  <label>Zip Code</label>
                   <input type="text" id="postalCode" name="postalCode"
                     value={this.state.property.address ? this.state.property.address.postalCode : ""}
                     className="form-control" onChange={this.handleInputChange} />
@@ -211,13 +210,13 @@ class EditProperty extends Component {
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Province</label>
+                  <label>Province/County</label>
                   <input type="text" id="province" name="province"
                     value={this.state.property.address ? this.state.property.address.province : ""}
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <label>Region</label>
+                  <label>Region/State</label>
                   <input type="text" id="region" name="region"
                     value={this.state.property.address ? this.state.property.address.region : ""}
                     className="form-control" onChange={this.handleInputChange} />
@@ -229,14 +228,15 @@ class EditProperty extends Component {
                     className="form-control" onChange={this.handleInputChange} />
                 </div>
                 <br />
-                <button type="submit" className="btn btn-primary">Next: put some great info</button>
+                <button type="submit" className="btn btn-info">Continue</button>
                 <br /><br />
               </form>
             </div>
             <div className="col-4">
               <img src="https://cdn.dribbble.com/users/1025386/screenshots/4074400/grey_couch.png"
                 width="90%"
-                alt="nice pic" />
+                alt="nice pic"
+                vspace="20" />
             </div>
           </div>
         </div>
@@ -244,8 +244,8 @@ class EditProperty extends Component {
       );
     } else if (this.state.page === 2) {
       return (
-        <div className="container">
-          <h1>Edit Property Data</h1>
+        <div className="container mt-5">
+          <h1>Property Details</h1>
           <form onSubmit={this.handleSave}>
             <h2>Details</h2>
             <div className="form-group">
@@ -255,7 +255,7 @@ class EditProperty extends Component {
                 className="form-control" onChange={this.handleInputChange} />
             </div>
             <div className="form-group">
-              <label>Rent in Euros</label>
+              <label>Monthly Rent (Euros)</label>
               <input type="number" id="rent" name="rent"
                 value={this.state.property.rent}
                 className="form-control" onChange={this.handleInputChange} />
@@ -284,32 +284,29 @@ class EditProperty extends Component {
                 value={this.state.property.bathrooms}
                 className="form-control" onChange={this.handleInputChange} />
             </div>
-            <hr />
-            <hr />
             <h2>Facilities</h2>
-            <div className="form-group">
+            <div className="form-group mt-4 ml-4">
               <input type="checkbox" id="lift" name="lift"
                 className="form-check-input" onChange={this.handleInputChange} />
-              <label>There a lift in the building</label>
+              <label>Working Lift/Elevator</label>
             </div>
-            <div className="form-group">
+            <div className="form-group ml-4">
               <input type="checkbox" id="petfriendly" name="petfriendly"
                 className="form-check-input" onChange={this.handleInputChange} />
-              <label>My property is pet friendly</label>
+              <label>Pet Friendly</label>
             </div>
-            <div className="form-group">
+            <div className="form-group ml-4">
               <input type="checkbox" id="furnitured" name="furnitured"
                 className="form-check-input" onChange={this.handleInputChange} />
-              <label>My property is furnished</label>
+              <label>Furnished</label>
             </div>
-            <div className="form-group">
+            <div className="form-group ml-4">
               <input type="checkbox" id="nearMetroStation" name="nearMetroStation"
                 className="form-check-input" onChange={this.handleInputChange} />
-              <label>My property has a metro station near by</label>
+              <label>Near Metro Station</label>
             </div>
-            <hr />
             <h2>Images</h2>
-            <div className="form-group">
+            <div className="form-group  mt-4">
               <label>Image 1 (paste URL)</label>
               <input type="text" id="image1" name="image1"
                 className="form-control" onChange={this.handleInputChange} />
@@ -325,7 +322,7 @@ class EditProperty extends Component {
                 className="form-control" onChange={this.handleInputChange} />
             </div>
             <br />
-            <button type="submit" className="btn btn-primary">PUBLISH PROPERTY</button>
+            <button type="submit" className="btn btn-info">Publish Property</button>
             <br /><br />
           </form>
         </div>

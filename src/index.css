@@ -30,6 +30,7 @@ code {
 .btn.btn-round {
   border-radius: 40px;
   padding: 0px;
+  color: white;
 }
 /* round social media button: className="btn btn-social-icon" */
 .btn.btn-social-icon {
@@ -373,5 +374,6 @@ code {
 	box-shadow: 2px 2px 3px #999;
 }
 .inside-float-button{
-	margin-top:22px;
+  margin-top:22px;
+  color: white;
 }
