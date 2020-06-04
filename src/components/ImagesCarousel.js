@@ -33,7 +33,7 @@ class ImagesCarousel extends Component {
         const imgSize = this.props.size === "card" ? "d-block w-100 pint-detail-img-small" : "d-block w-100 pint-detail-img";
 
         const indicators = this.state.property.imageURLs.map((img, idx) => (
-            <li key={idx} data-target="#imgCarousel"
+            <li key={idx} data-target={`#imgCarousel-${this.props.id}`}
                 data-slide-to={idx}
                 className={idx === 0 ? "active" : ""}>
             </li>
@@ -45,18 +45,18 @@ class ImagesCarousel extends Component {
         ));
         return (
             <div className="container  mt-4">
-                <div id="imgCarousel" className="carousel slide" data-interval="false">
+                <div id={`imgCarousel-${this.props.id}`} className="carousel slide" data-interval="false">
                     <ol className="carousel-indicators">
                         {indicators}
                     </ol>
                     <div className="carousel-inner">
                         {images}
                     </div>
-                    <a className="carousel-control-prev" href="#imgCarousel" role="button" data-slide="prev">
+                    <a className="carousel-control-prev" href={`#imgCarousel-${this.props.id}`} role="button" data-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span className="sr-only">Previous</span>
                     </a>
-                    <a className="carousel-control-next" href="#imgCarousel" role="button" data-slide="next">
+                    <a className="carousel-control-next" href={`#imgCarousel-${this.props.id}`} role="button" data-slide="next">
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="sr-only">Next</span>
                     </a>

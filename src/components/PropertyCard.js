@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Carousel from "./ImagesCarousel";
 
 const PropertyCard = props => {
@@ -13,7 +13,7 @@ const PropertyCard = props => {
         {/*<img className="pint-card-img" src={img} />*/}
         <Carousel id={props.property._id} size="card"></Carousel>
       </a>
-      <div className="pint-overlay pint-street">{props.property.address ? props.property.address.streetName : ""}</div>
+      <div className="pint-overlay pint-street">{props.property.address ? props.property.address.street : ""}</div>
       <div className="pint-overlay pint-price">€ {props.property.rent}</div>
       <div className="pint-overlay pint-favorite">
         <i className="fa fa-heart"></i>

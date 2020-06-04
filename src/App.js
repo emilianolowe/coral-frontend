@@ -11,7 +11,9 @@ import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
 import MyProperties from "./components/MyProperties";
+import AddProperty from "./components/AddProperty";
 import EditProperty from "./components/EditProperty";
+import EditPropertyPics from "./components/EditPropertyPics";
 import Cookies from 'universal-cookie';
 
 function App() {
@@ -37,7 +39,9 @@ function App() {
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/gallery" component={PropertyGallery}></Route>
           <ProtectedRoute path='/myproperties' component={MyProperties} />
-          <ProtectedRoute path='/addproperty' component={EditProperty} />
+          <ProtectedRoute path='/addproperty' component={AddProperty} />
+          <ProtectedRoute path='/editProperty' component={EditProperty} />
+          <ProtectedRoute path='/editPropertyPics' component={EditPropertyPics} />
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
