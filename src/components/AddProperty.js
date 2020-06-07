@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getPlaces, getPlace } from './LocationsDAO';
 import { saveProperty, getUserId } from './PropertiesDAO';
 import Cookies from 'universal-cookie';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class AddProperty extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class AddProperty extends Component {
             property: {
                 address: {
                     formatted: this.useQuery().get("address"),
-                    additionalInfo: ""    
+                    additionalInfo: ""
                 },
             },
             saved: false
@@ -38,7 +38,7 @@ class AddProperty extends Component {
                 ...this.state.property,
                 ownerId: id
             }
-        }) )
+        }))
 
     }
 
@@ -60,7 +60,7 @@ class AddProperty extends Component {
                         formatted: e.target.value
                     }
                 },
-                placeId: null, 
+                placeId: null,
                 searchStatus: ""
             })
             if (e.target.value === "") return;
@@ -113,14 +113,14 @@ class AddProperty extends Component {
                     }
                 })
 
-                if(data.result.geometry && data.result.geometry.location) {
+                if (data.result.geometry && data.result.geometry.location) {
                     latitude = data.result.geometry.location.lat
                     longitude = data.result.geometry.location.lng
                 }
 
-        
-                this.setState({ 
-                    placeId: placeId, 
+
+                this.setState({
+                    placeId: placeId,
                     addressComponents: data.result.address_components,
                     property: {
                         ...this.state.property,
@@ -143,7 +143,7 @@ class AddProperty extends Component {
     changePlace(formattedAddress) {
         return () => {
             console.log(formattedAddress)
-            this.setState({ 
+            this.setState({
                 property: {
                     ...this.state.property,
                     address: {
@@ -164,7 +164,7 @@ class AddProperty extends Component {
                     ...this.state.property.address,
                     additionalInfo: e.target.value
                 }
-                
+
             }
         })
     }
@@ -188,9 +188,9 @@ class AddProperty extends Component {
 
         let candidates = ""
         let message = "Searching address..."
-        if(this.state.saved) {
+        if (this.state.saved) {
             const url = "/editProperty?id=" + this.state.property._id
-            return  (<Redirect  to={url} />)
+            return (<Redirect to={url} />)
         }
 
         if (this.state.searchStatus === "OK") {
@@ -235,12 +235,12 @@ class AddProperty extends Component {
                     )
                 } else {
                     // ALL SET!
-                    message = "We found your address!"
+                    message = "We found this address. Is it right?"
                     candidates = (
                         <div>
                             <div className="font-weight-bold mt-4">
                                 <h5>{this.state.candidates[0].formatted_address}</h5>
-                                <br/>
+                                <br />
                                 <div class="form-group">
                                     <label for="additional">Additional Information</label>
                                     <input id="additional" type="text"

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { signup, login } from './PropertiesDAO';
+import {Redirect} from 'react-router-dom'
 
 class CreateAccount extends Component {
 
@@ -24,25 +25,35 @@ class CreateAccount extends Component {
                     valid: true,
                     touched: false
                 }
-            }
+            },
+            from: this.useQuery().get("from"),
+            loggedin: false,
+            errorMessage: null
+
         }
         
         this.handleSignup = this.handleSignup.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.useQuery = this.useQuery.bind(this);
     }
+    useQuery() {
+        return new URLSearchParams(window.location.search);
+    }
+
 
     handleSignup(event) {
         console.log("Handle Signup");
+        event.preventDefault();
         if (this.state.loginForm.username.value === '' || 
                 this.state.loginForm.password.value === '' ||
                 !this.state.loginForm.username.valid) {
-            alert("please provide email and password");
+            this.setState({ errorMessage: "please provide email and password." })
             event.preventDefault();
             return;
         }
         if (this.state.loginForm.password.value !== this.state.loginForm.confirm_password.value) {
-            alert("Passwords must match");
+            this.setState({ errorMessage: "Passwords must match." })
             event.preventDefault();
             return;
         }
@@ -55,13 +66,14 @@ class CreateAccount extends Component {
                     login(this.state.loginForm.username.value,
                         this.state.loginForm.password.value,
                         success => {console.log("successfully logged in")})
-                    alert("User created successfully")
+
+                    this.setState({ loggedin: true })
+
                 } else {
-                    alert("There was a problem creating that user")
+                    this.setState({ errorMessage: "There was a problem creating that user." })
                 }
             });
 
-        event.preventDefault();
     }
 
     handleBlur(event) {
@@ -108,6 +120,31 @@ class CreateAccount extends Component {
     }
 
     render() {
+
+        if(this.state.loggedin) {
+            return (<div className="modal" role="dialog">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-body">
+                        <p>Account created successfully.</p>
+                    </div>
+                    <div className="modal-footer">
+                        <a href={this.state.from} type="button" className="btn btn-secondary" data-dismiss="modal">Continue</a>
+                    </div>
+                    </div>
+                </div>
+            </div>)
+        }
+
+        let errorMessage = "";
+        if (this.state.errorMessage) {
+            errorMessage = (
+                <div className="alert alert-danger fade show" role="alert">
+                    {this.state.errorMessage}
+                </div>
+            )
+        }
+
         return (
             <div className="sign-form">
                 <form onSubmit={this.handleSignup}>
@@ -137,6 +174,7 @@ class CreateAccount extends Component {
                             onChange={this.handleInputChange('loginForm')}
                             onBlur={this.handleBlur}/>
                     </div>
+                    {errorMessage}
                     <div className="form-group">
                         <button type="submit" className="btn btn-info btn-lg btn-block signup-btn">Sign Up</button>
                     </div>

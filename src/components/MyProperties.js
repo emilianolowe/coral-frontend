@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./PropertyCard";
+import Card from "./PropertyOwnerCard";
 
 class MyProperties extends Component {
 
@@ -37,13 +37,19 @@ class MyProperties extends Component {
     ))
     return (
       <div className="container">
-        <h1>My Properties</h1>
+        <div className="row">
+          <div className="col-8">
+            <h2>My Properties</h2>
+          </div>
+          <div className="col">
+            <a href="/addproperty" class="btn btn-info">
+              Publish new Property
+            </a>
+          </div>
+        </div>
         <div className="card-deck">
           {theJSXResult}
         </div>
-        <a href="/addproperty" class="float-button">
-          <i class="fa fa-plus inside-float-button"></i>
-        </a>
       </div>
     );
   }

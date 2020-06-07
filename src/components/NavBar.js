@@ -22,6 +22,11 @@ class NavBar extends Component {
                                 </li>
                                 <li className="nav-item">
                                     <div className="btn btn-default navbar-btn btn-lg">
+                                        <a className="nav-link" href="/myproperties">My Properties</a>
+                                    </div>
+                                </li>
+                                <li className="nav-item">
+                                    <div className="btn btn-default navbar-btn btn-lg">
                                         <a className="nav-link" href="/aboutus">About Us</a>
                                     </div>
                                 </li>
