@@ -27,6 +27,24 @@ code {
   border: 2px solid #58939b;
   color: white;
 }
+
+.btn.btn-primary {
+  border-radius: 50px;
+  background: #007bff;
+  border: 2px solid #007bff;
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+}
+/* basic button on hover & focus  */
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  background: #007bff;
+  border: 2px solid #007bff;
+  color: white;
+}
+
+
 /* round button: className="btn btn-round" */
 .btn.btn-round {
   border-radius: 40px;

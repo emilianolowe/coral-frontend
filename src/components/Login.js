@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { login } from './PropertiesDAO';
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
     constructor(props) {
@@ -18,12 +19,21 @@ class Login extends Component {
                     valid: true,
                     touched: false
                 }
-            }
+            },
+            from: this.useQuery().get("from"),
+            loggedin: false,
+            errorMessage: null
         }
 
         this.handleLogin = this.handleLogin.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.useQuery = this.useQuery.bind(this);
+
+    }
+
+    useQuery() {
+        return new URLSearchParams(window.location.search);
     }
 
     handleLogin(event) {
@@ -31,14 +41,20 @@ class Login extends Component {
         if (this.state.loginForm.username.value === '' ||
             this.state.loginForm.password.value === '' ||
             !this.state.loginForm.username.valid) {
-            alert("please provide email and password");
+            this.setState({ errorMessage: "please provide email and password." })
             event.preventDefault();
             return;
         }
 
         login(this.state.loginForm.username.value,
             this.state.loginForm.password.value,
-            status => alert(status ? "Successfully logged in" : "Wrong username or password. Please try again."));
+            status => {
+                if (status) {
+                    this.setState({ loggedin: true })
+                } else {
+                    this.setState({ errorMessage: "Wrong user or password. Please try again." })
+                }
+            });
 
         event.preventDefault();
     }
@@ -88,6 +104,20 @@ class Login extends Component {
 
 
     render() {
+
+        if(this.state.loggedin) {
+            return (<Redirect to={this.state.from} /> )
+        }
+
+        let errorMessage = "";
+        if (this.state.errorMessage) {
+            errorMessage = (
+                <div className="alert alert-danger fade show" role="alert">
+                    {this.state.errorMessage}
+                </div>
+            )
+        }
+
         return (
             <div className="sign-form">
                 <form onSubmit={this.handleLogin}>
@@ -116,6 +146,7 @@ class Login extends Component {
                                 onBlur={this.handleBlur} />
                         </div>
                     </div>
+                    {errorMessage}
                     <div className="form-group">
                         <button type="submit" className="btn btn-info btn-lg btn-block signup-btn">Sign in</button>
                     </div>
@@ -126,7 +157,7 @@ class Login extends Component {
                         </div>
                     </div>
                 </form>
-                <div className="hint-text small">Don't have an account? <a href="/createaccount" className="text-success">Register Now!</a></div>
+                <div className="hint-text">Don't have an account? <a href={"/createaccount" + (this.state.from ? "?from=" + this.state.from : "")} className="text-success">Register Now!</a></div>
             </div>
         );
     }

@@ -4,6 +4,7 @@ import AboutUs from './components/AboutUs';
 import NavBar from './components/NavBar';
 import PropertyGallery from './components/PropertyGallery';
 import PropertyDetailsPage from './components/PropertyDetailsPage';
+import MyProperty from './components/MyProperty.js';
 import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Footer from "./components/Footer";
@@ -26,8 +27,10 @@ function App() {
         console.log("logged in. returning normal component")
         return (<Component {...props} />);
       }
-      console.log("not logged in. returning redirect")
-      return (<Redirect to={{ pathname: '/login', state: { from: props.location } }} />)
+      console.log("not logged in. redirecting to login page")
+      console.log(props.location)
+      //return (<Redirect to={{ pathname: '/login?path='+props.location.pathname+'&search='+props.location.search, state: { from: props.location }}} /> )
+      return (<Redirect to={'/login?from=' + props.location.pathname + props.location.search} />)
     }} />
   );
 
@@ -40,6 +43,7 @@ function App() {
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/gallery" component={PropertyGallery}></Route>
           <ProtectedRoute path='/myproperties' component={MyProperties} />
+          <ProtectedRoute path='/myproperty' component={MyProperty} />
           <ProtectedRoute path='/addproperty' component={AddProperty} />
           <ProtectedRoute path='/editProperty' component={EditProperty} />
           <ProtectedRoute path='/editPropertyPics' component={EditPropertyPics} />

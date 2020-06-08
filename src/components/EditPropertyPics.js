@@ -34,7 +34,8 @@ class EditPropertyPics extends Component {
     const property = {
       ...this.state.property,
       imageURLs: [],
-      status: "published"
+      status: "published",
+      description: document.getElementById("description").value
     }
     property.imageURLs.push(document.getElementById("pic1").value)
     if (document.getElementById("pic2").value) 
@@ -76,6 +77,12 @@ class EditPropertyPics extends Component {
           <div className="form-group">
             <label>Pic 3</label>
             <input type="text" id="pic3" name="pic3"
+              className="form-control" />
+          </div>
+          <br />
+          <h2>And put a good description!</h2>
+          <div className="form-group">
+            <input type="textarea" id="description" name="description"
               className="form-control" />
           </div>
           <br />
