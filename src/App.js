@@ -8,6 +8,7 @@ import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import Settings from "./components/Settings";
 import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
 import MyProperties from "./components/MyProperties";
@@ -26,9 +27,9 @@ function App() {
         return (<Component {...props} />);
       }
       console.log("not logged in. returning redirect")
-      return (<Redirect to={{ pathname: '/login', state: { from: props.location }}} /> )
+      return (<Redirect to={{ pathname: '/login', state: { from: props.location } }} />)
     }} />
- );
+  );
 
   return (
     <div>
@@ -45,6 +46,7 @@ function App() {
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/settings" component={Settings}></Route>
           <Route exact path="/createaccount" component={CreateAccount}></Route>
           <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
         </Switch>
