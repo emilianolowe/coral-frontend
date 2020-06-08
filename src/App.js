@@ -4,11 +4,12 @@ import AboutUs from './components/AboutUs';
 import NavBar from './components/NavBar';
 import PropertyGallery from './components/PropertyGallery';
 import PropertyDetailsPage from './components/PropertyDetailsPage';
-import MyProperty from './components/MyProperty.js';
+import MyProperty from './components/MyProperty';
 import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import Chat from "./components/Chat";
 import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
 import MyProperties from "./components/MyProperties";
@@ -46,6 +47,7 @@ function App() {
           <ProtectedRoute path='/addproperty' component={AddProperty} />
           <ProtectedRoute path='/editProperty' component={EditProperty} />
           <ProtectedRoute path='/editPropertyPics' component={EditPropertyPics} />
+          <Route exact path="/chat" component={Chat}></Route>
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>

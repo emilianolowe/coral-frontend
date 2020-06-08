@@ -23,7 +23,7 @@ class PropertyFilter extends Component {
   render() {
     return (
       <div className="container">
-        <div className="mt-5">
+        <div>
           <a id="price" className="btn btn-info badge-pill text-light m-3" data-toggle="collapse" href="#priceoptions" onClick={this.handleClick}>Price</a>
           <a id="city" className="btn btn-info badge-pill text-light m-3" data-toggle="collapse" href="#cityoptions" onClick={this.handleClick}>City</a>
           <a id="beds" className="btn btn-info badge-pill text-light m-3" data-toggle="collapse" href="#bedroomoptions" onClick={this.handleClick}>Bedrooms</a>

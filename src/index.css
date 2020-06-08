@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 35px; 
+  padding-top: 90px; 
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -41,6 +41,22 @@ code {
 .btn.btn-primary:focus {
   background: #007bff;
   border: 2px solid #007bff;
+  color: white;
+}
+
+.btn.btn-danger {
+  border-radius: 50px;
+  background: #dc3545;
+  border: 2px solid #dc3545;
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+}
+/* basic button on hover & focus  */
+.btn.btn-danger:hover,
+.btn.btn-danger:focus {
+  background: #dc3545;
+  border: 2px solid #dc3545;
   color: white;
 }
 
@@ -393,4 +409,12 @@ code {
 }
 .inside-float-button{
 	margin-top:22px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+.avatar img {
+  width: 100%;
 }

@@ -38,7 +38,9 @@ class NavBar extends Component {
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <div className="btn btn-default navbar-btn btn-lg">
-                                    <a className="nav-link" href="/login">Sign In</a>
+                                    <a className="nav-link" href="/login">
+                                        <img src="/img/account.svg" height="35" width="35" alt="account" ></img>
+                                    </a>
                                 </div>
                             </li>
                         </ul>

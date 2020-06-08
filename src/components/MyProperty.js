@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getProperty } from './PropertiesDAO';
 import ImagesCarousel from './ImagesCarousel';
+import ChatList from './ChatList';
 
 class MyProperty extends Component {
 
@@ -26,7 +27,7 @@ class MyProperty extends Component {
 
     render() {
 
-        if(!this.state.property) {
+        if (!this.state.property) {
             return (
                 <div>loading...</div>
             )
@@ -35,7 +36,7 @@ class MyProperty extends Component {
         let street = "";
         if (this.state.property.address) {
             street = this.state.property.address.street + ', '
-            + this.state.property.address.city    
+                + this.state.property.address.city
         }
         return (
             <div className="container">
@@ -99,17 +100,57 @@ class MyProperty extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-                                <p>visits schedule here</p>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colSpan="2">Prospect</th>
+                                            <th>Visit date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div className="avatar">
+                                                    <img src="img/kanya.png" alt="prospect" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Kanya Lyons
+                                            </td>
+                                            <td>Jun 5, 2020</td>
+                                            <td>
+                                                <button className="btn btn-info">Change date</button>
+                                                <button className="btn btn-info">View Profile</button>
+                                                <button className="btn btn-danger">Cancel</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div className="avatar">
+                                                    <img src="img/nano.png" alt="prospect" />
+                                                </div>
+                                            </td>
+                                            <td>Emiliano Lowe</td>
+                                            <td>Jun 15, 2020</td>
+                                            <td>
+                                                <button className="btn btn-info">Change date</button>
+                                                <button className="btn btn-info">View Profile</button>
+                                                <button className="btn btn-danger">Cancel</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                            
                             </div>
                         </div>
                         <div className="row mt-3">
                             <div className="col">
-                                <h3>Chat with potential renters</h3>
+                                <h3>Incoming messages from Prospects</h3>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col">
-                                <p>chats here</p>
+                                <ChatList />
                             </div>
                         </div>
                         <div className="row mt-3">
@@ -119,7 +160,7 @@ class MyProperty extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-                                <img src="https://www.bleathem.ca/patternfly-org/pattern-library/data-visualization/line-chart/img/single-line-chart.png" alt="visits"/>
+                                <img src="https://www.bleathem.ca/patternfly-org/pattern-library/data-visualization/line-chart/img/single-line-chart.png" alt="visits" />
                             </div>
                         </div>
                     </div>

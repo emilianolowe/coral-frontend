@@ -4,6 +4,11 @@ class ImagesCarousel extends Component {
 
     constructor(props) {
         super(props)
+        // let img = "https://media.istockphoto.com/photos/modern-house-interior-design-project-sketch-3d-rendering-picture-id973410708";
+        // if (props.property.imageURLs && props.property.imageURLs.length > 0 && props.property.imageURLs[0]) {
+        //   img = props.property.imageURLs[0];
+        // }
+      
         this.state = {
             property: {
                 id: this.props.id,

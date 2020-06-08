@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./PropertyOwnerCard";
+import Card from "./PropertyCard";
 
 class MyProperties extends Component {
 
@@ -32,7 +32,7 @@ class MyProperties extends Component {
   render() {
     const theJSXResult = this.state.properties.map(property => (
       <div>
-        <Card property={property} />
+        <Card property={property} link={`/myproperty?id=${property._id}`} />
       </div>
     ))
     return (
