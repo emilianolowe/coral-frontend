@@ -1,13 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import { getUser } from './UsersDAO'
+import Cookies from 'universal-cookie'
 
 const Settings = () => {
   const [value, setValue] = React.useState(' ');
   const onChange = event => setValue(event.target.value);
+
+  const cookies = new Cookies();
+  const email = cookies.get("coraluser")
+  getUser(email).then(user => console.log("received user:", user))
+
   return (
     <div className="container">
       <br /><br />
-      <h1>Your Profile</h1>
+      <h2>Your Profile</h2>
       <div className="container">
         <form className="mt-4" //onSubmit={this.handleSave}
         >

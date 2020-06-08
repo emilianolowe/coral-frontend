@@ -50,7 +50,7 @@ function App() {
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
-          <Route exact path="/settings" component={Settings}></Route>
+          <ProtectedRoute path='/settings' component={Settings} />
           <Route exact path="/createaccount" component={CreateAccount}></Route>
           <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
         </Switch>

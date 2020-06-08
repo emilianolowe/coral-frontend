@@ -41,6 +41,11 @@ class NavBar extends Component {
                                     <a className="nav-link" href="/login">Sign In</a>
                                 </div>
                             </li>
+                            <li className="nav-item">
+                                <div className="btn btn-default navbar-btn btn-lg">
+                                    <a className="nav-link" href="/settings">Settings</a>
+                                </div>
+                            </li>
                         </ul>
 
                     </div>
