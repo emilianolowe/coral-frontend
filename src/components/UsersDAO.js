@@ -6,6 +6,11 @@ export const getUser = id => {
     //.then(response => response.json())
 }
 
+export const setUser = user => {
+    return axios.post("http://localhost:3000/v1/users/" + user._id)
+
+}
+
 export const login = (username, password, callback) => {
     console.log("logging in user: ", username);
     fetch('http://localhost:3000/v1/users/login', {

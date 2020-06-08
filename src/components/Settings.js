@@ -1,44 +1,63 @@
-import React from 'react';
+import React from 'react'
 import { getUser } from './UsersDAO'
 import Cookies from 'universal-cookie'
 
-const Settings = () => {
-  const [value, setValue] = React.useState(' ');
-  const onChange = event => setValue(event.target.value);
+const cookies = new Cookies();
+const email = cookies.get("coraluser")
 
-  const cookies = new Cookies();
-  const email = cookies.get("coraluser")
-  getUser(email).then(user => console.log("received user:", user))
+const Settings = () => {
+
+  const [user, setUser] = React.useState({});
+
+  if (!user.username) {
+    getUser(email).then(user => {
+      console.log("received user:", user)
+      setUser(user.data[0]);
+    })
+  }
+
+  const onChange = event => {
+    // setFirstName(event.target.value)
+    console.log(event.target.value);
+    console.log(event.target.name);
+    const myUser = {
+      ...user,
+      [event.target.name]: event.target.value
+    }
+    console.log("User:", myUser);
+    setUser(myUser);
+  }
+
+  const handleSave = event => {
+    event.preventDefault();
+  }
 
   return (
     <div className="container">
       <br /><br />
       <h2>Your Profile</h2>
       <div className="container">
-        <form className="mt-4" //onSubmit={this.handleSave}
+        <form className="mt-4" onSubmit={handleSave}
         >
           <div className="container row">
             <div className="form-group">
               <label>First Name</label>
               <input type="text" id="firstName" name="firstName"
-              // value={value}
-              //className="form-control" onChange={onChange} 
+                value={user.firstName}
+                className="form-control" onChange={onChange}
               />
             </div>
             <div className="form-group">
               <label>Last Name</label>
               <input type="text" id="lastName" name="lastName"
-              // value={this.state.settings.lastName}
-              //className="form-control" onChange={this.handleInputChange} 
+                value={user.lastName}
+                className="form-control" onChange={onChange}
               />
             </div>
           </div>
           <div className="form-group">
-            <label>About You</label>
-            <input type="text" id="aboutYou" name="aboutYou"
-            // value={this.state.property.size}
-            //className="form-control" onChange={this.handleInputChange} 
-            />
+            <label>Email</label>
+            <p>{user.username}</p>
           </div>
           <br />
           <button type="submit" className="btn btn-primary">Save</button>
