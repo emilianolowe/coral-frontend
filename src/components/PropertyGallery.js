@@ -42,12 +42,12 @@ class Gallery extends Component {
       filter = (<PropertyFilter />);
     }
     return (
-      <div className="container">
-        {filter}
-        <div className="card-deck">
-          {theJSXResult}
-        </div>
+      // <div className="container">
+      // {filter}
+      <div className="card-deck">
+        {theJSXResult}
       </div>
+      // </div>
     );
   }
 }

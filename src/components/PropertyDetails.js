@@ -31,7 +31,7 @@ class PropertyDetails extends Component {
         let street = "";
         if (this.state.property.address) {
             street = this.state.property.address.street + ', '
-            + this.state.property.address.city    
+                + this.state.property.address.city
         }
         return (
             <div className="container">

@@ -43,6 +43,11 @@ class NavBar extends Component {
                                     </a>
                                 </div>
                             </li>
+                            <li className="nav-item">
+                                <div className="btn btn-default navbar-btn btn-lg">
+                                    <a className="nav-link" href="/settings">Settings</a>
+                                </div>
+                            </li>
                         </ul>
 
                     </div>
