@@ -1,6 +1,7 @@
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
+// transform from Promise/Callback to Async/Await now
 export const getUser = id => {
     return axios.get("http://localhost:3000/v1/users/" + id)
     //.then(response => response.json())
