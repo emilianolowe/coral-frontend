@@ -1,7 +1,7 @@
 import Cookies from 'universal-cookie';
 
 export const getProperty = (id, callback) => {
-    fetch("http://localhost:3000/v1/properties/" + id)
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/" + id)
         .then(response => response.json())
         .then(response => {
             console.log("getProperty - got response: ", response)
@@ -13,9 +13,22 @@ export const getProperty = (id, callback) => {
         });
 }
 
+export const getAllProperties = (callback) => {
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/")
+        .then(response => response.json())
+        .then(response => {
+            console.log("getAllProperties - got response: ", response)
+            callback(response);
+        })
+        .catch(error => {
+            console.log('getAllProperties - there has been a problem fetching: ' + error.message)
+            throw error;
+        });
+}
+
 export const login = (username, password, callback) => {
     console.log("logging in user: ", username);
-    fetch('http://localhost:3000/v1/users/login', {
+    fetch(process.env.REACT_APP_BASE_URL + '/v1/users/login', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -44,7 +57,7 @@ export const login = (username, password, callback) => {
 export const signup = (username, password, callback) => {
     console.log("signing up  user: ", username);
 
-    fetch('http://localhost:3000/v1/users/signup', {
+    fetch(process.env.REACT_APP_BASE_URL + '/v1/users/signup', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -70,7 +83,7 @@ export const signup = (username, password, callback) => {
 }
 
 export const getUserId = (userEmail, callback) => {
-    fetch("http://localhost:3000/v1/users/")
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/users/")
         .then(response => response.json())
         .then(response => {
             console.log("getUserId - got response: ", response);
@@ -88,7 +101,7 @@ export const getUserId = (userEmail, callback) => {
 }
 
 export const saveProperty = (property, callback) => {
-    let url = "http://localhost:3000/v1/properties/";
+    let url = process.env.REACT_APP_BASE_URL + "/v1/properties/";
     let method = "POST";
     if (property._id) {
         // property already exists.

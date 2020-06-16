@@ -1,7 +1,7 @@
 
 export const getPlaces = (address, callback) => {
     
-    fetch("http://localhost:3000/v1/locations?address=" + address)
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/locations?address=" + address)
     .then(response => response.json())
     .then(response => {
         console.log("getPlaces - got response: ", response)
@@ -15,7 +15,7 @@ export const getPlaces = (address, callback) => {
 
 export const getPlace = (placeId, callback) => {
     
-    fetch("http://localhost:3000/v1/locations/" + placeId)
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/locations/" + placeId)
     .then(response => response.json())
     .then(response => {
         console.log("getPlace - got response: ", response)

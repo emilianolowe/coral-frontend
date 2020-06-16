@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { getProperty } from "./PropertiesDAO";
 
 class ImagesCarousel extends Component {
 
@@ -24,14 +25,12 @@ class ImagesCarousel extends Component {
 
     // refactor to try/catch async from promise/callback?
     fetchData() {
-        fetch("http://localhost:3000/v1/properties/" + this.props.id)
-            .then(response => response.json())
-            .then(response => {
-                console.log("fetching response", response)
-                this.setState({
-                    property: response
-                })
+        getProperty(this.props.id, response => {
+            console.log("fetching response", response)
+            this.setState({
+                property: response
             })
+        })
     }
 
     render() {

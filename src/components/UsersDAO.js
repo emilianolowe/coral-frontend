@@ -3,18 +3,18 @@ import axios from 'axios'
 
 // transform from Promise/Callback to Async/Await now
 export const getUser = id => {
-    return axios.get("http://localhost:3000/v1/users/" + id)
+    return axios.get(process.env.REACT_APP_BASE_URL + "/v1/users/" + id)
     //.then(response => response.json())
 }
 
 export const setUser = user => {
-    return axios.post("http://localhost:3000/v1/users/" + user._id)
+    return axios.post(process.env.REACT_APP_BASE_URL + "/v1/users/" + user._id)
 
 }
 
 export const login = (username, password, callback) => {
     console.log("logging in user: ", username);
-    fetch('http://localhost:3000/v1/users/login', {
+    fetch(process.env.REACT_APP_BASE_URL + '/v1/users/login', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -43,7 +43,7 @@ export const login = (username, password, callback) => {
 export const signup = (username, password, callback) => {
     console.log("signing up  user: ", username);
 
-    fetch('http://localhost:3000/v1/users/signup', {
+    fetch(process.env.REACT_APP_BASE_URL + '/v1/users/signup', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -69,7 +69,7 @@ export const signup = (username, password, callback) => {
 }
 
 export const getUserId = (userEmail, callback) => {
-    fetch("http://localhost:3000/v1/users/")
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/users/")
         .then(response => response.json())
         .then(response => {
             console.log("getUserId - got response: ", response);
@@ -87,7 +87,7 @@ export const getUserId = (userEmail, callback) => {
 }
 
 export const saveProperty = (property, callback) => {
-    let url = "http://localhost:3000/v1/properties/";
+    let url = process.env.REACT_APP_BASE_URL + "/v1/properties/";
     let method = "POST";
     if (property._id) {
         // property already exists.
