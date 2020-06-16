@@ -28,8 +28,22 @@ const Settings = () => {
     setUser(myUser);
   }
 
+  // updates user info
   const handleSave = event => {
     event.preventDefault();
+    console.log(user);
+    setUser(user);
+    console.log(user);
+    
+    // saveUser(this.state.property, data => {
+    //   console.log(data)
+    //   if (data.status === "OK") {
+    //     this.setState({
+    //       saved: true
+    //     })
+    //   }
+    // })
+
   }
 
   return (
