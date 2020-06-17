@@ -21,31 +21,26 @@ class NavBar extends Component {
                             </li>
                             <li className="nav-item">
                                 <div className="btn btn-default navbar-btn btn-lg">
-                                    <a className="nav-link" href="/myproperties">My Properties</a>
-                                </div>
-                            </li>
-                            <li className="nav-item">
-                                <div className="btn btn-default navbar-btn btn-lg">
                                     <a className="nav-link" href="/aboutus">About Us</a>
                                 </div>
                             </li>
-                            <li className="nav-item">
-                                <div className="btn btn-default navbar-btn btn-lg">
-                                    <a className="nav-link" href="/gallery">Search</a>
-                                </div>
-                            </li>
+                        
+
+                        </ul>
+                        <ul className="navbar-nav">
+
+<form class="form-inline d-flex" action="/gallery">
+  <input name="search" class="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search" />
+    <button className="btn btn-link nav-link" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+</form>
+
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <div className="btn btn-default navbar-btn btn-lg">
-                                    <a className="nav-link" href="/login">
+                                    <a className="nav-link" href="/settings">
                                         <img src="/img/account.svg" height="35" width="35" alt="account" ></img>
                                     </a>
-                                </div>
-                            </li>
-                            <li className="nav-item">
-                                <div className="btn btn-default navbar-btn btn-lg">
-                                    <a className="nav-link" href="/settings">Settings</a>
                                 </div>
                             </li>
                         </ul>

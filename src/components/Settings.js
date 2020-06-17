@@ -34,7 +34,7 @@ const Settings = () => {
     console.log(user);
     setUser(user);
     console.log(user);
-    
+
     // saveUser(this.state.property, data => {
     //   console.log(data)
     //   if (data.status === "OK") {
@@ -76,6 +76,9 @@ const Settings = () => {
           <br />
           <button type="submit" className="btn btn-primary">Save</button>
           <br /><br />
+          <div>
+            <a className="btn btn-info" href="/myproperties">My Properties</a>
+          </div>
         </form>
       </div>
     </div>
