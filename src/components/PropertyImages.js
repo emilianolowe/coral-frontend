@@ -1,21 +1,19 @@
-import React from "react";
-
-function showMap() {
-  console.log("showing map")
-}
+import React, { useState } from "react";
+import MapContainer from "./MapContainer";
 
 const PropertyImages = props => {
+
+  const [mapVisible, setMapVisible] = useState(false);
+
+  function toggleMap() {
+    console.log("showing map")
+    setMapVisible(!mapVisible)
+  }
 
   if (!props.property || !props.property.imageURLs) {
     return (<div></div>);
   }
 
-  const indicators = props.property.imageURLs.map((img, idx) => (
-    <li key={idx} data-target={`#imgCarousel-${props.property._id}`}
-      data-slide-to={idx}
-      className={idx === 0 ? "active" : ""}>
-    </li>
-  ));
 
   const images = props.property.imageURLs.map((img, idx) => (
     <div key={idx} className={idx === 0 ? "carousel-item active" : "carousel-item"}>
@@ -23,12 +21,23 @@ const PropertyImages = props => {
     </div>
   ));
 
-  return (
-    <div className="pint-detail">
+  if (mapVisible) {
+    return (
+      <div className="pint-detail">
+        <div id="map" className="pint-map">
+          <MapContainer lat={props.property.address.latitude} lng={props.property.address.longitude} />
+        </div>
+        <div className="pint-map-buttons">
+          <button className="btn btn-info" onClick={toggleMap}>
+            <i className='fa fa-image'></i>
+          </button>
+        </div>
+      </div>
+    )  
+  } else {
+    return (
+      <div className="pint-detail">
         <div id={`imgCarousel-${props.property._id}`} className="carousel slide" data-interval="false">
-          <ol className="carousel-indicators">
-            {indicators}
-          </ol>
           <div className="carousel-inner">
             {images}
           </div>
@@ -41,9 +50,14 @@ const PropertyImages = props => {
             <span className="sr-only">Next</span>
           </a>
         </div>
-      <div id="map" className="d-none"></div>
-      <div className="pint-overlay pint-map" onClick={showMap}>Map</div>
-    </div>
-  );
-};
+        <div className="pint-map-buttons">
+          <button className="btn btn-info" onClick={toggleMap}>
+            <i className='fa fa-map'></i>
+          </button>
+        </div>
+      </div>
+    )  
+  }
+
+}
 export default PropertyImages;
