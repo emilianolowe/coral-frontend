@@ -1,5 +1,9 @@
 import React from "react";
 
+function showMap() {
+  console.log("showing map")
+}
+
 const PropertyImages = props => {
 
   if (!props.property || !props.property.imageURLs) {
@@ -37,8 +41,8 @@ const PropertyImages = props => {
             <span className="sr-only">Next</span>
           </a>
         </div>
-
-      <div className="pint-overlay pint-map">Map</div>
+      <div id="map" className="d-none"></div>
+      <div className="pint-overlay pint-map" onClick={showMap}>Map</div>
     </div>
   );
 };

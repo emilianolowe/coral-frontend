@@ -222,7 +222,7 @@ class AddProperty extends Component {
                     message = "We found this address, but it is incomplete. Could you please add some more information?"
                     const restr = restrictions.map(res => (
                         <div key={res}>
-                            <small class="form-text text-danger">Problem found: {res}.</small>
+                            <small className="form-text text-danger">Problem found: {res}.</small>
                         </div>
                     ))
                     candidates = (
@@ -241,8 +241,8 @@ class AddProperty extends Component {
                             <div className="font-weight-bold mt-4">
                                 <h5>{this.state.candidates[0].formatted_address}</h5>
                                 <br />
-                                <div class="form-group">
-                                    <label for="additional">Additional Information</label>
+                                <div className="form-group">
+                                    <label htmlFor="additional">Additional Information</label>
                                     <input id="additional" type="text"
                                         className="form-control"
                                         value={this.state.property.additionalInfo}
@@ -265,14 +265,14 @@ class AddProperty extends Component {
                 <div className="row">
                     <div className="col-md-8">
                         <form>
-                            <div class="form-group">
-                                <label for="address">Address</label>
+                            <div className="form-group">
+                                <label htmlFor="address">Address</label>
                                 <input id="address" type="text"
                                     className="form-control"
-                                    value={this.state.property.address.formatted}
+                                    value={this.state.property.address.formatted || ""}
                                     name="address" placeholder="Please, type your address"
                                     onChange={this.searchAddress} />
-                                <small id="addressHelp" class="form-text text-muted">Your data will be safe with us.</small>
+                                <small id="addressHelp" className="form-text text-muted">Your data will be safe with us.</small>
                             </div>
                             <hr />
                             <div id="results">

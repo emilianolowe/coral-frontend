@@ -178,14 +178,14 @@ class EditProperty extends Component {
                 </div>
                 <div className="row">
                   <div className="col">
-                    <div class="form-check">
+                    <div className="form-check">
                       <input type="checkbox" id="lift" name="lift" checked={this.state.property.lift}
                         className="form-check-input" onChange={this.handleInputChange} />
                       <label>There is a lift in the building</label>
                     </div>
                   </div>
                   <div className="col">
-                    <div class="form-check">
+                    <div className="form-check">
                       <input type="checkbox" id="petfriendly" name="petfriendly" checked={this.state.property.petfriendly}
                         className="form-check-input" onChange={this.handleInputChange} />
                       <label>My property is pet friendly</label>
@@ -194,14 +194,14 @@ class EditProperty extends Component {
                 </div>
                 <div className="row">
                   <div className="col">
-                    <div class="form-check">
+                    <div className="form-check">
                       <input type="checkbox" id="furnitured" name="furnitured" checked={this.state.property.furnitured}
                         className="form-check-input" onChange={this.handleInputChange} />
                       <label>My property is furnished</label>
                     </div>
                   </div>
                   <div className="col">
-                    <div class="form-check">
+                    <div className="form-check">
                       <input type="checkbox" id="nearMetroStation" name="nearMetroStation" checked={this.state.property.nearMetroStation}
                         className="form-check-input" onChange={this.handleInputChange} />
                       <label>My property has a metro station near by</label>

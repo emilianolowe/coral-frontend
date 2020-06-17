@@ -11,7 +11,7 @@ class OwnersLanding extends Component {
           subHeader="Rent your property securely. Long term rentals only."
           imgSrc="img/rent-gaurantee.jpeg"
           imgAlt="Barcelona street view" />
-        <div class="row mt-5"></div>
+        <div className="row mt-5"></div>
         <PeaceOfMindCard />
         <ServiceProvidersCard />
       </div>

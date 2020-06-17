@@ -9,7 +9,7 @@ const Settings = () => {
 
   const [user, setUser] = React.useState({});
 
-  if (!user.username) {
+  if (!user || !user.username) {
     getUser(email).then(user => {
       console.log("received user:", user)
       setUser(user.data[0]);

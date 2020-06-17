@@ -36,14 +36,16 @@ class MyProperties extends Component {
     ))
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-8">
-            <h2>My Properties</h2>
-          </div>
-          <div className="col">
-            <a href="/addproperty" class="btn btn-info">
-              Publish new Property
+        <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+          <div className="col-md-6 px-0">
+            <h1 className="display-5 font-italic">My Properties Dashboard</h1>
+            <p className="lead my-3">Peace of mind is one of our core values. Don't hesitate to contact us if you have any questions
+          on how to use our services.</p>
+            <p className="lead mb-0">
+              <a href="/addproperty" className="btn btn-info">
+                Publish new Property
             </a>
+            </p>
           </div>
         </div>
         <div className="card-deck">
