@@ -123,9 +123,9 @@ class Login extends Component {
                 <form onSubmit={this.handleLogin}>
                     <h2 className="text-center">Sign in</h2>
                     <div className="social-btn text-center">
-                        <a href="#" className="btn btn-facebook btn-lg"><i className="fa fa-facebook"></i>Facebook</a>
-                        <a href="#" className="btn btn-twitter btn-lg"><i className="fa fa-twitter"></i>Twitter</a>
-                        <a href="#" className="btn btn-instagram btn-lg"><i className="fa fa-google"></i>Google</a>
+                        <a href="https://www.facebook.com" className="btn btn-facebook btn-lg"><i className="fa fa-facebook"></i>Facebook</a>
+                        <a href="https://twitter.com" className="btn btn-twitter btn-lg"><i className="fa fa-twitter"></i>Twitter</a>
+                        <a href="https://www.google.com" className="btn btn-instagram btn-lg"><i className="fa fa-google"></i>Google</a>
                     </div>
                     <div className="or-seperator"><b>or</b></div>
                     <div className="form-group">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "./PropertyCard";
-import PropertyFilter from "./PropertyFilter";
+// import PropertyFilter from "./PropertyFilter";
 import { getAllProperties } from "./PropertiesDAO";
 
 class Gallery extends Component {
@@ -36,10 +36,10 @@ class Gallery extends Component {
         <Card property={property} favorite={true} link={`/property?id=${property._id}`} />
       </div>
     ))
-    let filter = "";
-    if (!this.props.hideFilter) {
-      filter = (<PropertyFilter />);
-    }
+    // let filter = "";
+    // if (!this.props.hideFilter) {
+    //   filter = (<PropertyFilter />);
+    // }
     return (
       // <div className="container">
       // {filter}

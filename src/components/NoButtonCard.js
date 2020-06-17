@@ -5,7 +5,7 @@ const NoButtonCard = props => {
     <div mt-5>
       <div className="card text-center border-0 m-0 p-0">
         <div className="overflow-auto">
-          <img src={props.imgsrc} alt="image-1" className="card-img-top" />
+          <img src={props.imgsrc} alt="property pic" className="card-img-top" />
         </div>
         <div className="card-body text-dark">
           <h5 className="card-title">{props.title}</h5>

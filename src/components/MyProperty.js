@@ -89,7 +89,7 @@ class MyProperty extends Component {
 
                     <div className="row">
                         <div className="col">
-                            <table class="table">
+                            <table className="table">
                                 <thead>
                                     <tr>
                                         <th colSpan="2">Prospect</th>

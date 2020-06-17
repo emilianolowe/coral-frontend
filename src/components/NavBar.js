@@ -29,9 +29,9 @@ class NavBar extends Component {
                         </ul>
                         <ul className="navbar-nav">
 
-<form class="form-inline d-flex" action="/gallery">
-  <input name="search" class="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search" />
-    <button className="btn btn-link nav-link" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+<form className="form-inline d-flex" action="/gallery">
+  <input name="search" className="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search" />
+    <button className="btn btn-link nav-link" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
 </form>
 
                         </ul>

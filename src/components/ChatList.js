@@ -5,7 +5,7 @@ class ChatList extends Component {
     render() {
         return (
             <div className="container">
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
                             <th colSpan="2">Prospect</th>

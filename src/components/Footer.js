@@ -28,17 +28,17 @@ class Footer extends Component {
                                 <span className="font-weight-bold ">Renting Reinvented</span>
                                 <p>Coral is a reimagined way to discover, tour, and rent a home. We specialize in long-term rentals.</p>
                                 <div className="py-2">
-                                    <a className="mr-3" href="#">
+                                    <a className="mr-3" href="https://www.facebook.com">
                                         <button type="button" className="btn btn-round btn-facebook btn-social-icon">
                                             <i className="fa fa-facebook"></i>
                                         </button>
                                     </a>
-                                    <a className="mr-3" href="#">
+                                    <a className="mr-3" href="https://twitter.com">
                                         <button type="button" className="btn btn-social-icon btn-twitter btn-round">
                                             <i className="fa fa-twitter"></i>
                                         </button>
                                     </a>
-                                    <a href="#">
+                                    <a href="https://www.instagram.com">
                                         <button type="button" className="btn btn-social-icon btn-instagram btn-round">
                                             <i className="fa fa-instagram"></i>
                                         </button>
