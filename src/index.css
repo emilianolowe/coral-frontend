@@ -102,6 +102,9 @@ code {
   margin-right: 0.4em;
   margin-left: 0.4em;
 }
+.card-deck {
+  justify-content: center;
+}
 .card-title {
   color: #ff7262 !important;
 }
@@ -159,6 +162,7 @@ code {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   height: 60vh;
+  min-height: 400px;
   width: 100%;
   object-fit: cover;
   color: rgb(103, 101, 101);
