@@ -33,7 +33,7 @@ class Gallery extends Component {
     // This constant will receive the resulting JSX to show whatever you want
     const theJSXResult = this.state.properties.map(property => (
       <div>
-        <Card property={property} favorite={true} contact={true} link={`/property?id=${property._id}`} />
+        <Card property={property} favorite={true} link={`/property?id=${property._id}`} />
       </div>
     ))
     let filter = "";

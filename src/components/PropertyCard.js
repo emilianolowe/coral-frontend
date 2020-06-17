@@ -3,7 +3,7 @@ import Carousel from "./ImagesCarousel";
 
 const PropertyCard = props => {
   const favoriteOverlay = props.favorite?(<div className="pint-overlay pint-favorite"><i className="fa fa-heart"></i></div>):""
-  const contactOverlay = props.contact?(<div className="pint-overlay pint-contact"><i className="fa fa-envelope"></i></div>):""
+  const contactOverlay = props.contact?(<div className="pint-overlay pint-contact"><i className="fa fa-comment"></i></div>):""
   return (
     <div className="pint-card">
       <a href={props.link}>

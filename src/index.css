@@ -107,7 +107,7 @@ code {
 }
 .pint-card {
   height: 300px;
-  width: 500px;
+  max-width: 500px;
   position: relative;
   margin: 10px;
   color: rgb(65, 62, 62);
@@ -120,6 +120,7 @@ code {
 }
 .pint-overlay {
   background-color: rgba(255,255,255, 0.8);
+  color: rgb(58, 58, 58); 
   border-radius: 50px;
   padding: 10px;
   position: absolute;
@@ -131,7 +132,6 @@ code {
 .pint-street {
   left: 25px;
   top: 10px;
-  color: rgb(103, 101, 101); 
 }
 .pint-favorite {
   right: 25px;
@@ -147,16 +147,18 @@ code {
   height: 40px;
   border-radius: 40px;
 }
+.pint-map {
+  left: 80%;
+  bottom: 10px;
+}
 .pint-detail {
-  height: 600px;
-  width: 80vw;
   position: relative;
   color: rgb(103, 101, 101);
 }
 .pint-detail-img {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  height: 500px;
+  height: 60vh;
   width: 100%;
   object-fit: cover;
   color: rgb(103, 101, 101);
