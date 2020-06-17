@@ -425,3 +425,11 @@ code {
 .avatar img {
   width: 100%;
 }
+
+.chat-avatar {
+  width: 60px;
+  height: 60px;
+}
+.chat-avatar img {
+  width: 100%;
+}
