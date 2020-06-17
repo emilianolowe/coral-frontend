@@ -263,7 +263,7 @@ class AddProperty extends Component {
             <div className="container mt-5">
                 <h2>List your property</h2>
                 <div className="row">
-                    <div className="col-8">
+                    <div className="col-md-8">
                         <form>
                             <div class="form-group">
                                 <label for="address">Address</label>
@@ -281,7 +281,7 @@ class AddProperty extends Component {
                             </div>
                         </form>
                     </div>
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <img src="https://www.vippng.com/png/detail/330-3300910_office-plant-png-transparent-background-hanging-plants-clipart.png"
                             width="90%"
                             alt="nice pic" />

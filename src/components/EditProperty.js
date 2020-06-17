@@ -102,7 +102,7 @@ class EditProperty extends Component {
       <div className="container">
         <h2>Please let us know more about your property</h2>
         <div className="row">
-          <div className="col-8">
+          <div className="col-md-8">
             <form onSubmit={this.handleSave}>
               <div className="form-group">
                 <label>Title</label>
@@ -215,7 +215,7 @@ class EditProperty extends Component {
             </form>
 
           </div>
-          <div className="col-4">
+          <div className="colmd-4">
             <img src="https://www.vippng.com/png/detail/330-3300910_office-plant-png-transparent-background-hanging-plants-clipart.png"
               width="90%"
               alt="nice pic" />

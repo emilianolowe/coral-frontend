@@ -13,11 +13,11 @@ class Hero extends Component {
                 className="hero">
                 <div className="container">
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-md-8">
                             <h1 className="text-left">{this.props.heroHeader}</h1>
                             <h3 className="text-left">{this.props.subHeader}</h3>
                         </div>
-                        <div className="col-4 bg-white">
+                        <div className="col-md-4 bg-white">
                             <h4 className="text-left text-info mt-5 mb-4">Where is your property?</h4>
                             <form action="/addproperty">
                                 <input type="text" 
