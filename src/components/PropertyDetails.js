@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ImagesCarousel from './ImagesCarousel';
 import PropertyImages from './PropertyImages';
 import PropertyGallery from './PropertyGallery';
 import { getProperty } from './PropertiesDAO';
@@ -41,7 +40,7 @@ class PropertyDetails extends Component {
                 <PropertyImages property={this.state.property} />
                 <div className="container mt-4">
                     <div className="row">
-                        <div className="col-lg d-flex justify-content-lg-start justify-content-center">
+                        <div className="col-lg-8 d-flex justify-content-lg-start justify-content-center">
                             <h2>{this.state.property.title}</h2>
                         </div>
                         <div className="col-lg d-flex justify-content-lg-end justify-content-center">
