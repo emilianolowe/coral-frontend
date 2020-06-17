@@ -88,10 +88,9 @@ code {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 .hero h1 {
-  font-size: 5em;
+  font-size: 4em;
   margin-top: 0;
   margin-bottom: 0.2em;
 }
