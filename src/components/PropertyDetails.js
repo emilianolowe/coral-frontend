@@ -44,8 +44,8 @@ class PropertyDetails extends Component {
                             <h2>{this.state.property.title}</h2>
                         </div>
                         <div className="col-lg d-flex justify-content-lg-end justify-content-center">
-                            <div className="btn btn-info">Book a Visit</div>
-                            <div className="btn btn-info">Chat with the owner</div>
+                            <a className="btn btn-info" href="/">Book a Visit</a>
+                            <a className="btn btn-info" href="/chat">Chat with the owner</a>
                         </div>
                     </div>
                     <div className="row">
