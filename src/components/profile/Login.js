@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { login } from './PropertiesDAO';
+import { login } from '../../DAO/PropertiesDAO';
 import {Redirect} from 'react-router-dom'
 
 class Login extends Component {

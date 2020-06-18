@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getProperty, saveProperty } from './PropertiesDAO';
+import { getProperty, saveProperty } from '../../DAO/PropertiesDAO';
 import {Redirect} from 'react-router-dom';
 
 class EditPropertyPics extends Component {
@@ -34,7 +34,7 @@ class EditPropertyPics extends Component {
     const property = {
       ...this.state.property,
       imageURLs: [],
-      status: "published",
+      status: "pending validation",
       description: document.getElementById("description").value
     }
     property.imageURLs.push(document.getElementById("pic1").value)
@@ -57,7 +57,7 @@ class EditPropertyPics extends Component {
   render() {
     if(this.state.saved) {
       //const url = "/editProperty?id=" + this.state.property._id
-      return  (<Redirect  to="/" />)
+      return  (<Redirect  to={"/myproperty?id=" + this.state.property._id} />)
     }
 
     return (

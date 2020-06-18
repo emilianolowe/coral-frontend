@@ -13,6 +13,25 @@ export const getProperty = (id, callback) => {
         });
 }
 
+export const getMyProperties = (callback) => {
+    const cookies = new Cookies();
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/myproperties", {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + cookies.get("coraltoken")
+        }
+    })
+    .then(response => response.json())
+    .then(response => {
+        console.log("getMyProperties - got response: ", response)
+        callback(response);
+    })
+    .catch(error => {
+        console.log('getMyProperties - there has been a problem fetching: ' + error.message)
+        throw error;
+    });
+}
+
 export const getAllProperties = (callback) => {
     fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/")
         .then(response => response.json())

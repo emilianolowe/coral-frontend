@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropertyImages from './PropertyImages';
 import PropertyGallery from './PropertyGallery';
-import { getProperty } from './PropertiesDAO';
+import { getProperty } from '../../DAO/PropertiesDAO';
 class PropertyDetails extends Component {
 
     constructor(props) {

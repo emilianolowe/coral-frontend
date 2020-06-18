@@ -2,29 +2,28 @@ import React from 'react';
 import HomePage from './components/HomePage';
 import AboutUs from './components/AboutUs';
 import NavBar from './components/NavBar';
-import PropertyGallery from './components/PropertyGallery';
-import PropertyDetailsPage from './components/PropertyDetailsPage';
-import MyProperty from './components/MyProperty';
+import PropertyGallery from './components/property/PropertyGallery';
+import PropertyDetailsPage from './components/property/PropertyDetailsPage';
+import MyProperty from './components/property/MyProperty';
 import OwnersLanding from './components/OwnersLanding';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Footer from "./components/Footer";
-import Login from "./components/Login";
-import Chat from "./components/Chat";
-import Settings from "./components/Settings";
-import CreateAccount from "./components/CreateAccount";
-import ForgotPassword from "./components/ForgotPassword";
-import MyProperties from "./components/MyProperties";
-import AddProperty from "./components/AddProperty";
-import EditProperty from "./components/EditProperty";
-import EditPropertyPics from "./components/EditPropertyPics";
-import Cookies from 'universal-cookie';
+import Login from "./components/profile/Login";
+import Chat from "./components/chat/Chat";
+import Settings from "./components/profile/Settings";
+import CreateAccount from "./components/profile/CreateAccount";
+import ForgotPassword from "./components/profile/ForgotPassword";
+import MyProperties from "./components/property/MyProperties";
+import AddProperty from "./components/property/AddProperty";
+import EditProperty from "./components/property/EditProperty";
+import EditPropertyPics from "./components/property/EditPropertyPics";
+import {isLoggedIn} from './DAO/UsersDAO'
 
 function App() {
 
   const ProtectedRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={(props) => {
-      const cookies = new Cookies();
-      if (cookies.get("coraluser")) {
+      if (isLoggedIn()) {
         console.log("logged in. returning normal component")
         return (<Component {...props} />);
       }
@@ -45,7 +44,7 @@ function App() {
           <Route exact path="/gallery" component={PropertyGallery}></Route>
           <ProtectedRoute path='/myproperties' component={MyProperties} />
           <ProtectedRoute path='/myproperty' component={MyProperty} />
-          <ProtectedRoute path='/addproperty' component={AddProperty} />
+          <Route path='/addproperty' component={AddProperty} />
           <ProtectedRoute path='/editProperty' component={EditProperty} />
           <ProtectedRoute path='/editPropertyPics' component={EditPropertyPics} />
           <Route exact path="/chat" component={Chat}></Route>

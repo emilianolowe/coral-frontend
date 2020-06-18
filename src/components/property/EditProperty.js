@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getProperty, saveProperty } from './PropertiesDAO';
+import { getProperty, saveProperty } from '../../DAO/PropertiesDAO';
 import { Redirect } from 'react-router-dom';
 
 class EditProperty extends Component {

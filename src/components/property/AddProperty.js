@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { getPlaces, getPlace } from './LocationsDAO';
-import { saveProperty, getUserId } from './PropertiesDAO';
+import { getPlaces, getPlace } from '../../DAO/LocationsDAO';
+import { saveProperty, getUserId } from '../../DAO/PropertiesDAO';
+import { isLoggedIn, signup } from '../../DAO/UsersDAO';
 import Cookies from 'universal-cookie';
 import { Redirect } from 'react-router-dom';
 
@@ -21,6 +22,13 @@ class AddProperty extends Component {
                     additionalInfo: ""
                 },
             },
+            user: {
+                email: "",
+                fullName: "",
+                phoneCountryId: "+34",
+                phoneNumber: "",
+                password: ""
+            },
             saved: false
         }
 
@@ -29,16 +37,19 @@ class AddProperty extends Component {
         this.changePlace = this.changePlace.bind(this);
         this.getPlaceDetails = this.getPlaceDetails.bind(this);
         this.changeAdditional = this.changeAdditional.bind(this);
+        this.changeUser = this.changeUser.bind(this);
         this.save = this.save.bind(this)
 
         this.searchAddress();
 
-        getUserId(cookies.get("coraluser"), id => this.setState({
-            property: {
-                ...this.state.property,
-                ownerId: id
-            }
-        }))
+        if (isLoggedIn()) {
+            getUserId(cookies.get("coraluser"), id => this.setState({
+                property: {
+                    ...this.state.property,
+                    ownerId: id
+                }
+            }))    
+        }
 
     }
 
@@ -169,24 +180,64 @@ class AddProperty extends Component {
         })
     }
 
-    save(e) {
-        saveProperty(this.state.property, data => {
-            console.log(data)
-            if (data.status === "OK") {
-                this.setState({
-                    property: {
-                        ...this.state.property,
-                        _id: data.id
-                    },
-                    saved: true
-                })
+    changeUser(e) {
+        this.setState({
+            user: {
+                ...this.state.user,
+                [e.target.name]: e.target.value
+
             }
         })
+    }
+
+    save(e) {
+        if (!isLoggedIn()) {
+            // create account
+            signup(this.state.user.email, this.state.user.password, () => {
+                const cookies = new Cookies()
+                getUserId(cookies.get("coraluser"), id => {
+                    this.setState({
+                        property: {
+                            ...this.state.property,
+                            ownerId: id
+                        }
+                    })
+                    saveProperty(this.state.property, data => {
+                        console.log(data)
+                        if (data.status === "OK") {
+                            this.setState({
+                                property: {
+                                    ...this.state.property,
+                                    _id: data.id
+                                },
+                                saved: true
+                            })
+                        }
+                    })
+    
+                })
+            }, this.state.user.fullName, this.state.user.phoneCountryId, this.state.user.phoneNumber)
+        } else {
+            saveProperty(this.state.property, data => {
+                console.log(data)
+                if (data.status === "OK") {
+                    this.setState({
+                        property: {
+                            ...this.state.property,
+                            _id: data.id
+                        },
+                        saved: true
+                    })
+                }
+            })    
+        }
     }
 
     render() {
 
         let candidates = ""
+        let signupForm = ""
+        let saveButton = ""
         let message = "Searching address..."
         if (this.state.saved) {
             const url = "/editProperty?id=" + this.state.property._id
@@ -249,9 +300,59 @@ class AddProperty extends Component {
                                         name="additional" placeholder="(apartment number, floor, etc)"
                                         onChange={this.changeAdditional} />
                                 </div>
-                                <input type="button" className="btn btn-info" value="Save property" onClick={this.save} />
                             </div>
                         </div>
+                    )
+                    // if not logged in, present signup form...
+                    if (!isLoggedIn()) {
+                        signupForm = (
+                            <div>
+                                <h4>Let's create an account for you</h4>
+                                <div className="form-group">
+                                    <label htmlFor="fullName">Your full name</label>
+                                    <input id="fullName" type="text"
+                                        className="form-control"
+                                        value={this.state.user.fullName}
+                                        name="fullName" 
+                                        onChange={this.changeUser} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Your email</label>
+                                    <input id="email" type="email"
+                                        className="form-control"
+                                        value={this.state.user.email}
+                                        name="email" 
+                                        onChange={this.changeUser} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="phoneCountryId">Phone country code</label>
+                                    <input id="phoneCountryId" type="text"
+                                        className="form-control"
+                                        value={this.state.user.phoneCountryId}
+                                        name="phoneCountryId" 
+                                        onChange={this.changeUser} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="phoneNumber">Phone Number</label>
+                                    <input id="phoneNumber" type="text"
+                                        className="form-control"
+                                        value={this.state.user.phoneNumber}
+                                        name="phoneNumber" 
+                                        onChange={this.changeUser} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password">Choose a password</label>
+                                    <input id="password" type="password"
+                                        className="form-control"
+                                        value={this.state.user.password}
+                                        name="password" 
+                                        onChange={this.changeUser} />
+                                </div>
+                            </div>
+                        )
+                    } 
+                    saveButton = (
+                        <input type="button" className="btn btn-info" value="Save property" onClick={this.save} />
                     )
                 }
             }
@@ -278,6 +379,8 @@ class AddProperty extends Component {
                             <div id="results">
                                 <h4>{message}</h4>
                                 {candidates}
+                                {signupForm}
+                                {saveButton}
                             </div>
                         </form>
                     </div>

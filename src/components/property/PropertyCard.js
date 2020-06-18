@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "./ImagesCarousel";
+import Carousel from "../ImagesCarousel";
 
 const PropertyCard = props => {
   const favoriteOverlay = props.favorite?(<div className="pint-overlay pint-favorite"><i className="fa fa-heart"></i></div>):""

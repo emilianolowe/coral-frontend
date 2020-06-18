@@ -1,6 +1,12 @@
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
+export const isLoggedIn = () => {
+    const cookies = new Cookies()
+    if (!cookies.get("coraluser")) return false
+    // validate token (later... not on MVP...)
+    return true
+}
 // transform from Promise/Callback to Async/Await now
 export const getUser = id => {
     return axios.get(process.env.REACT_APP_BASE_URL + "/v1/users/" + id)
@@ -40,7 +46,7 @@ export const login = (username, password, callback) => {
         });
 }
 
-export const signup = (username, password, callback) => {
+export const signup = (username, password, callback, fullName, phoneCountryId, phoneNumber) => {
     console.log("signing up  user: ", username);
 
     fetch(process.env.REACT_APP_BASE_URL + '/v1/users/signup', {
@@ -49,8 +55,11 @@ export const signup = (username, password, callback) => {
         },
         method: "POST",
         body: JSON.stringify({
-            username: username,
-            password: password
+            username,
+            password,
+            fullName,
+            phoneCountryId,
+            phoneNumber
         })
     })
         .then(res => res.json())
@@ -59,7 +68,7 @@ export const signup = (username, password, callback) => {
                 throw new Error(data.err.message)
             }
             if (data.success) {
-                callback(true);
+                login(username, password, callback)
             }
         })
         .catch((err) => {

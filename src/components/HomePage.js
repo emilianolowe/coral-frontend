@@ -11,6 +11,7 @@ class HomePage extends Component {
           subHeader="No realtor fees. No extra deposits. No hassle."
           imgSrc="/img/hero-home.jpg"
           imgAlt="Barcelona building facade"
+          showSearch="true"
           mb-5 pb-5 />
         <div className="row mt-5"></div>
         <FindAPlaceToLoveCard />

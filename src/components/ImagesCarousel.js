@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getProperty } from "./PropertiesDAO";
+import { getProperty } from "../DAO/PropertiesDAO";
 
 class ImagesCarousel extends Component {
 

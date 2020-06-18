@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "./PropertyCard";
-import { getAllProperties } from "./PropertiesDAO";
+import { getMyProperties } from "../../DAO/PropertiesDAO";
 
 class MyProperties extends Component {
 
@@ -18,7 +18,7 @@ class MyProperties extends Component {
 
   // refactor to try/catch async from promise/callback?
   fetchData() {
-    getAllProperties(response => {
+    getMyProperties(response => {
       console.log("fetching response", response)
       this.setState({
         properties: response

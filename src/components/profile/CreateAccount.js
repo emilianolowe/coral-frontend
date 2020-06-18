@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { signup, login } from './PropertiesDAO';
+import { signup, login } from '../../DAO/PropertiesDAO';
 
 class CreateAccount extends Component {
 

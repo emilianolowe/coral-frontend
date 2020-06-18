@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getProperty, getUserId } from './PropertiesDAO'
+import { getProperty, getUserId } from '../../DAO/PropertiesDAO'
 import Cookies from 'universal-cookie'
 import ChatMessage from './ChatMessage'
 

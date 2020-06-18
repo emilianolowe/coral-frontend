@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "./PropertyCard";
 // import PropertyFilter from "./PropertyFilter";
-import { getAllProperties } from "./PropertiesDAO";
+import { getAllProperties } from "../../DAO/PropertiesDAO";
 
 class Gallery extends Component {
 

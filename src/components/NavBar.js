@@ -24,16 +24,14 @@ class NavBar extends Component {
                                     <a className="nav-link" href="/aboutus">About Us</a>
                                 </div>
                             </li>
-                        
+
 
                         </ul>
                         <ul className="navbar-nav">
-
-<form className="form-inline d-flex" action="/gallery">
-  <input name="search" className="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search" />
-    <button className="btn btn-link nav-link" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
-</form>
-
+                            <form className="form-inline d-flex" action="/gallery">
+                                <input name="search" className="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search" />
+                                <button className="btn btn-link nav-link" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item">
