@@ -83,9 +83,9 @@ class MyProperty extends Component {
                     <p className="text-sm-left text-center">{this.state.property.description}</p>
 
                 </div>
-                
+
                 <div className="container mt-4">
-                <h3 className="text-sm-left text-center">Visits Schedule</h3>
+                    <h3 className="text-sm-left text-center">Visits Schedule</h3>
 
                     <div className="row">
                         <div className="col">
