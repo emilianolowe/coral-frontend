@@ -45,7 +45,7 @@ function App() {
           <ProtectedRoute path='/myproperty' component={MyProperty} />
           <Route path='/addproperty' component={AddProperty} />
           <ProtectedRoute path='/editProperty' component={EditProperty} />
-          <Route exact path="/chat" component={Chat}></Route>
+          <ProtectedRoute exact path="/chat" component={Chat}></ProtectedRoute>
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>

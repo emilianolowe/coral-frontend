@@ -26,8 +26,8 @@ const ChatMessage = props => {
       </div>
     )
     orientation = "d-flex justify-content-start"
-    col1Size = "col-2"
-    col2Size = "col-10"
+    col1Size = "col-auto"
+    col2Size = "col"
 
   } else {
     col1 = (
@@ -37,8 +37,8 @@ const ChatMessage = props => {
     )
     col2 = avatar
     orientation = "d-flex justify-content-end"
-    col1Size = "col-10"
-    col2Size = "col-2"
+    col1Size = "col"
+    col2Size = "col-auto"
   }
 
 

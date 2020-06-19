@@ -18,7 +18,7 @@ export const getUser = id => {
 }
 
 export const setUser = user => {
-    return axios.post(process.env.REACT_APP_BASE_URL + "/v1/users/" + user._id)
+    return axios.put(process.env.REACT_APP_BASE_URL + "/v1/users/" + user._id, user)
 
 }
 

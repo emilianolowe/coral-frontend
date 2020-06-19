@@ -24,7 +24,6 @@ class Chat extends Component {
     }
 
     render() {
-        const property = {}
         return (
             <div className="container">
                 <div className="more-seperator"><b>Wed, 16 June</b></div>

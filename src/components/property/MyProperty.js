@@ -68,7 +68,7 @@ class MyProperty extends Component {
           </div>
         )    
         let visits = ""
-        if (this.state.property.status !== "pending validation") {
+        if (this.state.property.status === "published") {
             visits = (
                 <div className="container mt-4">
                     <h3 className="text-sm-left text-center">Visits Schedule</h3>

@@ -1,8 +1,10 @@
 import React from 'react'
-import { getUser } from '../../DAO/UsersDAO'
+import { getUser, isLoggedIn } from '../../DAO/UsersDAO'
 import Cookies from 'universal-cookie'
 import PeaceOfMindCard from "../PeaceOfMindCard";
 import ServiceProvidersCard from "../ServiceProvidersCard";
+import EditViewProfile from './EditViewProfile';
+import { Redirect } from 'react-router-dom';
 
 const cookies = new Cookies();
 const email = cookies.get("coraluser")
@@ -10,7 +12,7 @@ const email = cookies.get("coraluser")
 const Profile = () => {
 
   const [user, setUser] = React.useState({});
-
+  
   if (!user || !user.username) {
     getUser(email).then(user => {
       console.log("received user:", user)
@@ -18,48 +20,24 @@ const Profile = () => {
     })
   }
 
-  const onChange = event => {
-    // setFirstName(event.target.value)
-    console.log(event.target.value);
-    console.log(event.target.name);
-    const myUser = {
-      ...user,
-      [event.target.name]: event.target.value
-    }
-    console.log("User:", myUser);
-    setUser(myUser);
+  if(!isLoggedIn()) {
+    return (
+      <Redirect to="/" />
+    )
   }
 
-  // updates user info
-  const handleSave = event => {
-    event.preventDefault();
-    console.log(user);
-    setUser(user);
-    console.log(user);
-
-  }
-
-  const logout = event => {
-    console.log("logout")
+  if (!user || !user.username) {
+    return (
+      <div className="container">
+        <h3>Loading user...</h3>
+      </div>
+    )
   }
 
   return (
     <div className="container">
         <div className="jumbotron mt-5 p-3 p-md-5 text-white rounded bg-dark row">
-          <div className="col-md text-md-left text-center">
-            <h1 className="display-5 font-italic">{user.fullName}</h1>
-            <p className="lead my-3">
-            {user.phoneCountryId + " " + user.phoneNumber}
-            </p>
-            <p className="lead my-3">
-            {email}
-            </p>
-            <p className="lead my-3">
-              <a href="/" className="btn btn-info btn-sm">Edit</a>
-              <button href="/" className="btn btn-danger btn-sm" onClick={logout}>Logout</button>
-            </p>
-
-          </div>
+          <EditViewProfile user={user} />
           <div className="col-md-auto text-md-left text-center">
             <img src="https://www.pngkit.com/png/full/810-8105516_blue-person-icon-blue-person-icon-png.png" className="thumb" alt="profile thumb" />
           </div>
