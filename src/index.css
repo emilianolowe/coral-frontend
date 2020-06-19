@@ -108,12 +108,16 @@ code {
 .card-title {
   color: #ff7262 !important;
 }
+
 .pint-card {
   height: 300px;
   max-width: 500px;
   position: relative;
   margin: 10px;
   color: rgb(65, 62, 62);
+}
+.real-rounded {
+  border-radius: 25px;
 }
 .pint-card-img {
   border-radius: 25px;
@@ -164,7 +168,11 @@ code {
   min-height: 400px;
   width: 100%;
 }
-
+.thumb {
+  border-radius: 5px;
+  max-width: 120px;
+  max-height: 100px;
+}
 .pint-detail {
   position: relative;
   color: rgb(103, 101, 101);

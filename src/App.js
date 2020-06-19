@@ -16,7 +16,6 @@ import ForgotPassword from "./components/profile/ForgotPassword";
 import MyProperties from "./components/property/MyProperties";
 import AddProperty from "./components/property/AddProperty";
 import EditProperty from "./components/property/EditProperty";
-import EditPropertyPics from "./components/property/EditPropertyPics";
 import {isLoggedIn} from './DAO/UsersDAO'
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
           <ProtectedRoute path='/myproperty' component={MyProperty} />
           <Route path='/addproperty' component={AddProperty} />
           <ProtectedRoute path='/editProperty' component={EditProperty} />
-          <ProtectedRoute path='/editPropertyPics' component={EditPropertyPics} />
           <Route exact path="/chat" component={Chat}></Route>
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
