@@ -10,7 +10,7 @@ import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Login from "./components/profile/Login";
 import Chat from "./components/chat/Chat";
-import Settings from "./components/profile/Settings";
+import Profile from "./components/profile/Profile";
 import CreateAccount from "./components/profile/CreateAccount";
 import ForgotPassword from "./components/profile/ForgotPassword";
 import MyProperties from "./components/property/MyProperties";
@@ -49,7 +49,7 @@ function App() {
           <Route exact path="/property" component={PropertyDetailsPage}></Route>
           <Route exact path="/owner" component={OwnersLanding}></Route>
           <Route exact path="/login" component={Login}></Route>
-          <ProtectedRoute path='/settings' component={Settings} />
+          <ProtectedRoute path='/profile' component={Profile} />
           <Route exact path="/createaccount" component={CreateAccount}></Route>
           <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
         </Switch>

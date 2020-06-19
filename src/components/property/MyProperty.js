@@ -60,6 +60,9 @@ class MyProperty extends Component {
                 <a href="/chat" className="btn btn-info">
                   Contact us
               </a>
+              <a href="/myProperties" className="btn btn-info">
+                  My Properties
+              </a>
               </p>
             </div>
           </div>

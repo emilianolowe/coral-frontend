@@ -1,12 +1,16 @@
 import Cookies from 'universal-cookie'
 import axios from 'axios'
+import jwtDecode from 'jwt-decode'
 
 export const isLoggedIn = () => {
     const cookies = new Cookies()
     if (!cookies.get("coraluser")) return false
-    // validate token (later... not on MVP...)
-    return true
+    const jwt = jwtDecode(cookies.get("coraltoken"))
+    const expTime = jwt.exp * 1000
+
+    return Date.now() < expTime
 }
+
 // transform from Promise/Callback to Async/Await now
 export const getUser = id => {
     return axios.get(process.env.REACT_APP_BASE_URL + "/v1/users/" + id)

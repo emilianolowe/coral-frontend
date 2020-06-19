@@ -23,7 +23,6 @@ export const getMyProperties = (callback) => {
     })
     .then(response => response.json())
     .then(response => {
-        console.log("getMyProperties - got response: ", response)
         callback(response);
     })
     .catch(error => {

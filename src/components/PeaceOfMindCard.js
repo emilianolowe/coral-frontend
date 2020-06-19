@@ -10,7 +10,7 @@ class PeaceOfMindCard extends Component {
             title="Peace Of Mind"
             bodyText="We make renting your home safe and easy."
             btnText="List My Property" 
-            linkurl="/myproperties" />
+            linkurl="/addproperty" />
         </div>
       </div>
     );

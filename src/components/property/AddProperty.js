@@ -21,6 +21,7 @@ class AddProperty extends Component {
                     formatted: this.useQuery().get("address"),
                     additionalInfo: ""
                 },
+                status: "draft",
             },
             user: {
                 email: "",
@@ -29,7 +30,8 @@ class AddProperty extends Component {
                 phoneNumber: "",
                 password: ""
             },
-            saved: false
+            saved: false,
+            loggedIn: isLoggedIn()
         }
 
         this.searchAddress = this.searchAddress.bind(this);
@@ -43,14 +45,17 @@ class AddProperty extends Component {
         this.searchAddress();
 
         if (isLoggedIn()) {
-            getUserId(cookies.get("coraluser"), id => this.setState({
-                property: {
-                    ...this.state.property,
-                    ownerId: id
-                }
-            }))    
+            getUserId(
+                cookies.get("coraluser"),
+                id => this.setState({
+                    property: {
+                        ...this.state.property,
+                        ownerId: id
+                    },
+                    loggedIn: true
+                })
+            )
         }
-
     }
 
     useQuery() {
@@ -191,7 +196,7 @@ class AddProperty extends Component {
     }
 
     save(e) {
-        if (!isLoggedIn()) {
+        if (!this.state.loggedIn) {
             // create account
             signup(this.state.user.email, this.state.user.password, () => {
                 const cookies = new Cookies()
@@ -214,7 +219,7 @@ class AddProperty extends Component {
                             })
                         }
                     })
-    
+
                 })
             }, this.state.user.fullName, this.state.user.phoneCountryId, this.state.user.phoneNumber)
         } else {
@@ -229,7 +234,7 @@ class AddProperty extends Component {
                         saved: true
                     })
                 }
-            })    
+            })
         }
     }
 
@@ -240,6 +245,7 @@ class AddProperty extends Component {
         let saveButton = ""
         let message = "Searching address..."
         if (this.state.saved) {
+            console.log("Saved! Redirecting....")
             const url = "/editProperty?id=" + this.state.property._id
             return (<Redirect to={url} />)
         }
@@ -304,7 +310,7 @@ class AddProperty extends Component {
                         </div>
                     )
                     // if not logged in, present signup form...
-                    if (!isLoggedIn()) {
+                    if (!this.state.loggedIn) {
                         signupForm = (
                             <div>
                                 <h4>Let's create an account for you</h4>
@@ -313,7 +319,7 @@ class AddProperty extends Component {
                                     <input id="fullName" type="text"
                                         className="form-control"
                                         value={this.state.user.fullName}
-                                        name="fullName" 
+                                        name="fullName"
                                         onChange={this.changeUser} />
                                 </div>
                                 <div className="form-group">
@@ -321,7 +327,7 @@ class AddProperty extends Component {
                                     <input id="email" type="email"
                                         className="form-control"
                                         value={this.state.user.email}
-                                        name="email" 
+                                        name="email"
                                         onChange={this.changeUser} />
                                 </div>
                                 <div className="form-group">
@@ -329,7 +335,7 @@ class AddProperty extends Component {
                                     <input id="phoneCountryId" type="text"
                                         className="form-control"
                                         value={this.state.user.phoneCountryId}
-                                        name="phoneCountryId" 
+                                        name="phoneCountryId"
                                         onChange={this.changeUser} />
                                 </div>
                                 <div className="form-group">
@@ -337,7 +343,7 @@ class AddProperty extends Component {
                                     <input id="phoneNumber" type="text"
                                         className="form-control"
                                         value={this.state.user.phoneNumber}
-                                        name="phoneNumber" 
+                                        name="phoneNumber"
                                         onChange={this.changeUser} />
                                 </div>
                                 <div className="form-group">
@@ -345,12 +351,12 @@ class AddProperty extends Component {
                                     <input id="password" type="password"
                                         className="form-control"
                                         value={this.state.user.password}
-                                        name="password" 
+                                        name="password"
                                         onChange={this.changeUser} />
                                 </div>
                             </div>
                         )
-                    } 
+                    }
                     saveButton = (
                         <input type="button" className="btn btn-info" value="Save property" onClick={this.save} />
                     )

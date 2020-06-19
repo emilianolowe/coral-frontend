@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Card from "./PropertyCard";
 import { getMyProperties } from "../../DAO/PropertiesDAO";
 
 class MyProperties extends Component {
@@ -29,11 +28,45 @@ class MyProperties extends Component {
   handleClick() { }
 
   render() {
-    const theJSXResult = this.state.properties.map(property => (
-      <div>
-        <Card property={property} link={`/myproperty?id=${property._id}`} />
-      </div>
-    ))
+    const propList = this.state.properties.map(property => {
+      const img = property.imageURLs ? (<img src={property.imageURLs[0]} className="thumb" alt="property thumb" />) : ""
+      const statusClass = property.status === "published" ? "text-success" : "text-danger"
+      let buttons = ""
+      if (property.status === "published") {
+        buttons = (<a href={"/myproperty?id=" + property._id} className="btn btn-info">View</a>)
+      } else {
+        buttons = (
+          <div>
+            <a href={"/myproperty?id=" + property._id} className="btn btn-info">View</a>
+            <a href={"/editProperty?id=" + property._id} className="btn btn-info">Edit</a>
+            <a href={"/editProperty?id=" + property._id} className="btn btn-danger">Delete</a>
+          </div>
+        )
+      }
+      return (
+        <div className="row p-3 text-md-left text-center" key={property._id}>
+          <div className="col-md-auto">
+            <div className="p-3">{img}</div>
+          </div>
+          <div className="col-md">
+            <div className="d-flex flex-column p-3">
+              <div>
+                <strong>{property.title}</strong>
+              </div>
+              <div>
+                {property.address.street}
+              </div>
+              <div>
+                Status: <strong className={statusClass}>{property.status}</strong>
+              </div>
+              <div>
+                {buttons}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    })
     return (
       <div className="container">
         <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
@@ -48,9 +81,7 @@ class MyProperties extends Component {
             </p>
           </div>
         </div>
-        <div className="card-deck">
-          {theJSXResult}
-        </div>
+        {propList}
       </div>
     );
   }
