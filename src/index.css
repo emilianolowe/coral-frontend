@@ -452,3 +452,6 @@ code {
 .chat-avatar img {
   width: 100%;
 }
+.nav-search {
+  min-width: 30vw;
+}

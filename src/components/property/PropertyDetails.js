@@ -44,7 +44,7 @@ class PropertyDetails extends Component {
                             <h2>{this.state.property.title}</h2>
                         </div>
                         <div className="col-lg d-flex justify-content-lg-end justify-content-center">
-                            <a className="btn btn-info" href="/">Book a Visit</a>
+                            <a className="btn btn-info" rel="noopener noreferrer" target="_blank" href="https://calendly.com/ltreven/15min?month=2020-06">Book a Visit</a>
                             <a className="btn btn-info" href="/chat">Chat with the owner</a>
                         </div>
                     </div>

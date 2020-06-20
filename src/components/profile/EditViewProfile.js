@@ -34,14 +34,14 @@ const EditViewProfile = (props) => {
             ...userData,
             [event.target.name]: event.target.value
         }
-        setUserData(myUser);
+        setUserData(myUser)
     }
 
     const handleSave = event => {
-        event.preventDefault();
-        console.log(userData);
-        setUser(userData);
+        event.preventDefault()
+        setUser(userData)
         toogleEditMode(false)
+        props.updateUser(userData)
     }
 
     if (!loggedIn) {
@@ -56,6 +56,7 @@ const EditViewProfile = (props) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-auto text-md-left text-center">
+                            <h3>Edit your profile</h3>
                             <form>
                                 <div className="form-group">
                                     <label>Your full name</label>
@@ -71,12 +72,18 @@ const EditViewProfile = (props) => {
                                 </div>
                                 <div className="form-group">
                                     <label>Your Telephone Number</label>
-                                    <input type="text" name="phoneNumber" maxLength="15"
+                                    <input type="text" name="phoneNumber" maxLength="20"
                                         value={userData.phoneNumber || ''}
                                         className="form-control" onChange={onChange} />
                                 </div>
                                 <div className="form-group">
                                     {email}
+                                </div>
+                                <div className="form-group">
+                                    <label>About you</label>
+                                    <textarea name="aboutYou" rows="3"
+                                        value={userData.aboutYou || ''}
+                                        className="form-control" onChange={onChange} />
                                 </div>
 
                                 <p className="lead my-3">
@@ -103,7 +110,10 @@ const EditViewProfile = (props) => {
                     {email}
                 </p>
                 <p className="lead my-3">
-                    <a href="/" className="btn btn-info btn-sm" onClick={edit}>Edit</a>
+                    {props.user.aboutYou}
+                </p>
+                <p className="lead my-3">
+                    <a href="/" className="btn btn-primary btn-sm" onClick={edit}>Edit</a>
                     <button href="/" className="btn btn-danger btn-sm" onClick={logout}>Logout</button>
                 </p>
 

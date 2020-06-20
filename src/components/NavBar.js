@@ -13,7 +13,17 @@ class NavBar extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav mr-auto">
+                            <form className="form-inline d-flex no-wrap flex-row" action="/gallery">
+                                <input name="search" className="form-control nav-search ml-sm-4" 
+                                    type="text" placeholder="Where is your dream home?" 
+                                    aria-label="Search" />
+                                <button className="btn btn-outline-info btn-sm ml-3 d-none d-md-block" type="submit">
+                                    Search
+                                </button>
+                            </form>
+                        </ul>
+                        <ul className="navbar-nav">
                             <li className="nav-item">
                                 <div className="btn btn-default navbar-btn btn-lg">
                                     <a className="nav-link" href="/owner">List My Property</a>
@@ -26,12 +36,6 @@ class NavBar extends Component {
                             </li>
 
 
-                        </ul>
-                        <ul className="navbar-nav">
-                            <form className="form-inline d-flex" action="/gallery">
-                                <input name="search" className="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-link nav-link" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item">
