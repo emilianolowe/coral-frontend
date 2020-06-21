@@ -2,18 +2,26 @@ import React, { Component } from "react";
 import PropertyImages from './PropertyImages';
 import PropertyGallery from './PropertyGallery';
 import { getProperty } from '../../DAO/PropertiesDAO';
+import { isLoggedIn, getloggedInUserId } from '../../DAO/UsersDAO';
+import { postMessageToOwner, getMessages } from '../../DAO/ChatDAO';
+import { Launcher } from 'react-chat-window';
+
 class PropertyDetails extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             property: {
-                id: this.props.id
+                _id: this.props.id
             },
+            messageList: [],
             error: null
         }
 
         this.loadProperty = this.loadProperty.bind(this);
+        this._onMessageWasSent = this._onMessageWasSent.bind(this);
+        this._sendMessage = this._sendMessage.bind(this);
+
         try {
             getProperty(this.props.id, this.loadProperty)
         } catch (error) {
@@ -21,9 +29,52 @@ class PropertyDetails extends Component {
         }
 
     }
+    _onMessageWasSent(message) {
+        postMessageToOwner(this.state.property._id, message.data.text, data => {
+            if (data !== null) {
+                this.setState({
+                    messageList: [...this.state.messageList, message]
+                })          
+            } else {
+                this.setState({
+                    messageList: [...this.state.messageList, "error sending message"]
+                })          
+            }
+        } )
+      }
+     
+      _sendMessage(text) {
+        if (text.length > 0) {
+          this.setState({
+            messageList: [...this.state.messageList, {
+              author: 'them',
+              type: 'text',
+              data: { text }
+            }]
+          })
+        }
+      }
 
     loadProperty(property) {
-        this.setState({ property: property });
+        const me = getloggedInUserId()
+        getMessages(property._id).then(msgs => {
+            this.setState({ 
+                property: property,
+                messageList: msgs.data.map(msg => {
+                    const msgObj = {
+                        author: "them",
+                        type: "text",
+                        data: {
+                            text: msg.message
+                        }
+                    }
+                    if (msg.from === me) {
+                        msgObj.author = "me"
+                    }
+                    return msgObj
+                })
+            });
+        })
     }
 
     render() {
@@ -35,6 +86,20 @@ class PropertyDetails extends Component {
             street = this.state.property.address.street + ', '
                 + this.state.property.address.city
         }
+        let chat = "";
+        let chatButton = (<a className="btn btn-info" href="/login?from=/property?id=5ed834de8fcb422f90dbff2f">Chat with the owner</a>)
+        if (isLoggedIn()) {
+            chatButton = ""
+            chat = (<Launcher
+                agentProfile={{
+                    teamName: 'Chat with the Owner',
+                    imageUrl: '/img/minilogo.jpg'
+                }}
+                onMessageWasSent={this._onMessageWasSent.bind(this)}
+                messageList={this.state.messageList}
+                showEmoji
+            />)
+        }
         return (
             <div className="container">
                 <PropertyImages property={this.state.property} />
@@ -45,7 +110,7 @@ class PropertyDetails extends Component {
                         </div>
                         <div className="col-lg d-flex justify-content-lg-end justify-content-center">
                             <a className="btn btn-info" rel="noopener noreferrer" target="_blank" href="https://calendly.com/ltreven/15min?month=2020-06">Book a Visit</a>
-                            <a className="btn btn-info" href="/chat">Chat with the owner</a>
+                            {chatButton}
                         </div>
                     </div>
                     <div className="row">
@@ -59,7 +124,7 @@ class PropertyDetails extends Component {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="container mt-4">
                     <h3 className="text-sm-left text-center">Characteristics</h3>
                     <div className="row mt-3">
@@ -82,6 +147,7 @@ class PropertyDetails extends Component {
                 </div>
                 <div className="more-seperator"><b>more like this</b></div>
                 <PropertyGallery hideFilter={true} />
+                {chat}
             </div>
         );
     }

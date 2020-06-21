@@ -2,6 +2,13 @@ import Cookies from 'universal-cookie'
 import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 
+export const getloggedInUserId = () => {
+    const cookies = new Cookies()
+    if (!cookies.get("coraluser")) return null
+    const jwt = jwtDecode(cookies.get("coraltoken"))
+    return jwt._id
+}
+
 export const isLoggedIn = () => {
     const cookies = new Cookies()
     if (!cookies.get("coraluser")) return false
