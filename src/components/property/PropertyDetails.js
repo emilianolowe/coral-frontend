@@ -56,25 +56,29 @@ class PropertyDetails extends Component {
       }
 
     loadProperty(property) {
-        const me = getloggedInUserId()
-        getMessages(property._id).then(msgs => {
-            this.setState({ 
-                property: property,
-                messageList: msgs.data.map(msg => {
-                    const msgObj = {
-                        author: "them",
-                        type: "text",
-                        data: {
-                            text: msg.message
+        if (isLoggedIn()) {
+            const me = getloggedInUserId()
+            getMessages(property._id).then(msgs => {
+                this.setState({ 
+                    property: property,
+                    messageList: msgs.data.map(msg => {
+                        const msgObj = {
+                            author: "them",
+                            type: "text",
+                            data: {
+                                text: msg.message
+                            }
                         }
-                    }
-                    if (msg.from === me) {
-                        msgObj.author = "me"
-                    }
-                    return msgObj
-                })
-            });
-        })
+                        if (msg.from === me) {
+                            msgObj.author = "me"
+                        }
+                        return msgObj
+                    })
+                });
+            })
+        } else {
+            this.setState({property: property})
+        }
     }
 
     render() {
