@@ -26,7 +26,6 @@ class ImagesCarousel extends Component {
     // refactor to try/catch async from promise/callback?
     fetchData() {
         getProperty(this.props.id, response => {
-            console.log("fetching response", response)
             this.setState({
                 property: response
             })

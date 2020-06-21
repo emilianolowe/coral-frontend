@@ -4,7 +4,6 @@ export const getProperty = (id, callback) => {
     fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/" + id)
         .then(response => response.json())
         .then(response => {
-            console.log("getProperty - got response: ", response)
             callback(response);
         })
         .catch(error => {
@@ -31,11 +30,14 @@ export const getMyProperties = (callback) => {
     });
 }
 
-export const getAllProperties = (callback) => {
-    fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/")
+export const getAllProperties = (status, callback) => {
+    let filter = ""
+    if (status) {
+        filter = "?status=" + status
+    }
+    fetch(process.env.REACT_APP_BASE_URL + "/v1/properties/" + filter)
         .then(response => response.json())
         .then(response => {
-            console.log("getAllProperties - got response: ", response)
             callback(response);
         })
         .catch(error => {

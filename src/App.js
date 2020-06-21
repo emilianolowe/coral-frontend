@@ -14,6 +14,7 @@ import Profile from "./components/profile/Profile";
 import CreateAccount from "./components/profile/CreateAccount";
 import ForgotPassword from "./components/profile/ForgotPassword";
 import MyProperties from "./components/property/MyProperties";
+import Admin from "./components/property/Admin";
 import AddProperty from "./components/property/AddProperty";
 import EditProperty from "./components/property/EditProperty";
 import {isLoggedIn} from './DAO/UsersDAO'
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/gallery" component={PropertyGallery}></Route>
+          <ProtectedRoute path='/admin' component={Admin} />
           <ProtectedRoute path='/myproperties' component={MyProperties} />
           <ProtectedRoute path='/myproperty' component={MyProperty} />
           <Route path='/addproperty' component={AddProperty} />

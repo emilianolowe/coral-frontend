@@ -19,7 +19,7 @@ class Gallery extends Component {
 
   // refactor to try/catch async from promise/callback?
   fetchData() {
-    getAllProperties(response => {
+    getAllProperties("published", response => {
       this.setState({
         properties: response
       })
