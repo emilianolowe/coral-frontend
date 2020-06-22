@@ -9,12 +9,13 @@ class MyProperty extends Component {
         super(props);
 
         this.state = {
-            proertyId: (new URLSearchParams(window.location.search)).get('id') || ''
+            propertyId: (new URLSearchParams(window.location.search)).get('id') || '',
         };
 
         this.loadProperty = this.loadProperty.bind(this);
+
         try {
-            getProperty(this.state.proertyId, this.loadProperty)
+            getProperty(this.state.propertyId, this.loadProperty)
         } catch (error) {
             this.setState({ error: error.message })
         }
@@ -53,25 +54,25 @@ class MyProperty extends Component {
         }
         let message = (
             <div className="jumbotron p-3 p-md-5 text-white rounded-lg bg-info">
-            <div className="col-md-6 px-0">
-              <h1 className="display-5 font-italic">{msgTitle}</h1>
-              <p className="lead my-3">{msgText}</p>
-              <p className="lead mb-0">
-                <a href="/chat" className="btn btn-info">
-                  Contact us
+                <div className="col-md-6 px-0">
+                    <h1 className="display-5 font-italic">{msgTitle}</h1>
+                    <p className="lead my-3">{msgText}</p>
+                    <p className="lead mb-0">
+                        <a href="/chat" className="btn btn-info">
+                            Contact us
               </a>
-              <a href="/myProperties" className="btn btn-info">
-                  My Properties
+                        <a href="/myProperties" className="btn btn-info">
+                            My Properties
               </a>
-              </p>
+                    </p>
+                </div>
             </div>
-          </div>
-        )    
+        )
         let visits = ""
         if (this.state.property.status === "published") {
             visits = (
-                <div className="container mt-4">
-                    <h3 className="text-sm-left text-center">Visits Schedule</h3>
+                <div className="container mt-5">
+                    <h3 className="text-sm-left text-center mt-3">Visits Schedule</h3>
 
                     <div className="row">
                         <div className="col">
@@ -119,14 +120,14 @@ class MyProperty extends Component {
                         </div>
                     </div>
 
-                    <h3 className="text-sm-left text-center">Incoming messages from Prospects</h3>
+                    <h3 className="text-sm-left text-center mt-3">Incoming chat messages</h3>
                     <div className="row">
                         <div className="col">
-                            <ChatList />
+                            <ChatList propertyId={this.state.property._id} />
                         </div>
                     </div>
 
-                    <h3 className="text-sm-left text-center">Analytics - page views</h3>
+                    <h3 className="text-sm-left text-center mt-3">Analytics - page views</h3>
                     <div className="row">
                         <div className="col">
                             <img src="https://www.bleathem.ca/patternfly-org/pattern-library/data-visualization/line-chart/img/single-line-chart.png"

@@ -449,8 +449,14 @@ code {
   width: 60px;
   height: 60px;
 }
+
 .chat-avatar img {
   width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .nav-search {
   min-width: 30vw;
