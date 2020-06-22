@@ -33,13 +33,6 @@ const Profile = () => {
     setUser(newUser).then(() => setStateUser(newUser))
   }
 
-  if (!user || !user.username) {
-    getUser(email).then(user => {
-      console.log("received user:", user)
-      setStateUser(user.data[0]);
-    })
-  }
-
   if (!isLoggedIn()) {
     return (
       <Redirect to="/" />
@@ -47,6 +40,11 @@ const Profile = () => {
   }
 
   if (!user || !user.username) {
+    getUser(email).then(user => {
+      console.log("received user:", user)
+      setStateUser(user.data[0]);
+    })
+
     return (
       <div className="container">
         <h3>Loading user...</h3>

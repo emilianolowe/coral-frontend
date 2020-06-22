@@ -35,6 +35,12 @@ class Gallery extends Component {
         <Card property={property} favorite={true} link={`/property?id=${property._id}`} />
       </div>
     ))
+    let loading = ""
+    if (this.state.properties.length === 0) {
+      loading = (<div className="text-center mt-4">
+        <img src="https://cdn.dribbble.com/users/2035064/screenshots/4599692/____.gif" alt="loading" />
+      </div>)
+    }
     // let filter = "";
     // if (!this.props.hideFilter) {
     //   filter = (<PropertyFilter />);
@@ -43,6 +49,7 @@ class Gallery extends Component {
       // <div className="container">
       // {filter}
       <div className="card-deck">
+        {loading}
         {theJSXResult}
       </div>
       // </div>
