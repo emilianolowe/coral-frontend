@@ -17,7 +17,9 @@ import MyProperties from "./components/property/MyProperties";
 import Admin from "./components/property/Admin";
 import AddProperty from "./components/property/AddProperty";
 import EditProperty from "./components/property/EditProperty";
+import Policy from './components/Policy';
 import {isLoggedIn} from './DAO/UsersDAO'
+import Terms from './components/Terms';
 
 function App() {
 
@@ -54,6 +56,8 @@ function App() {
           <ProtectedRoute path='/profile' component={Profile} />
           <Route exact path="/createaccount" component={CreateAccount}></Route>
           <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
+          <Route exact path="/policy" component={Policy}></Route>
+          <Route exact path="/terms" component={Terms}></Route>
         </Switch>
       </BrowserRouter>
       <Footer />
